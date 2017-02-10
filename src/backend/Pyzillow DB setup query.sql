@@ -1,6 +1,6 @@
 
 CREATE TABLE home_data (
-    street_address INT NOT NULL PRIMARY KEY,
+    street_address VARCHAR(255) NOT NULL PRIMARY KEY,
     zip INT NOT NULL,
     city VARCHAR(255),
     state VARCHAR(255),
