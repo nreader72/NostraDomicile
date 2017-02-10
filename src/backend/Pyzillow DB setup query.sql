@@ -4,7 +4,6 @@ CREATE TABLE home_data (
     zip INT NOT NULL,
     city VARCHAR(255),
     state VARCHAR(255),
-    price DECIMAL(10 , 2 ),
     home_type VARCHAR(255),
     bedrooms INT,
     bathrooms INT,
