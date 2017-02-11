@@ -18,7 +18,7 @@ CREATE TABLE home_data (
     floor_covering VARCHAR(255),
     number_of_rooms INT,
     neighborhood VARCHAR(255),
-    shool_district VARCHAR(255),
+    school_district VARCHAR(255),
     sold_binary INT NOT NULL CHECK (sold_binary > - 1 AND sold_binary < 2),
     last_sold_date VARCHAR(255),
     last_sale_price DECIMAL(10 , 2 ),
