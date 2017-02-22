@@ -24,5 +24,6 @@ CREATE TABLE home_data (
     last_sale_price DECIMAL(10 , 2 ),
     appliances VARCHAR(500),
     roof_type VARCHAR(255),
-    room_types VARCHAR(500)
+    room_types VARCHAR(500),
+    updated_properties INT NOT NULL CHECK (sold_binary > - 1 AND sold_binary < 2)
 )
