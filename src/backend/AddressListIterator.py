@@ -1,11 +1,10 @@
 
-import mysql.connector, time
+import mysql.connector
+from datetime import datetime as dt
 from pyzillow.pyzillow import ZillowWrapper, GetDeepSearchResults, GetUpdatedPropertyDetails, ZillowError 
 
-
-## Put addresses into list for processing ##
-## Use 'split' to determine delimiting character, if csv, change \n to , ##
-address_file = open("C:/Users/Christian/Documents/LiClipse Workspace/Example1/27401.txt","r")
+## Put (csv) addresses into list for processing ##
+address_file = open("C:/Users/Christian/Documents/LiClipse Workspace/Example1/Zip_Code_Lists/27401.txt","r")
 address_list = address_file.read().split('\n')
 
 ## Add file listing zip codes we have address files for, separate each zip into separate file
@@ -114,16 +113,16 @@ def main():
             if check:
                 if upd:
                     t = 1    
-                    if str(upd_result.last_sold_date) != 'None':
-                        sale_date = time.strptime(str(upd_result.last_sold_date), "%d/%m/%Y")
-                        compare_date = time.strptime('02/08/2016',"%d/%m/%Y")
+                    if str(ds_result.last_sold_date) != 'None':
+                        sale_date = dt.strptime(ds_result.last_sold_date, "%m/%d/%Y")
+                        compare_date = dt.strptime('01/01/2016',"%m/%d/%Y")
                         if sale_date < compare_date:
                             s = 0
                         else:
                             s = 1
                     else:
                         s = 0
-                    insert_home(address,27401,'Greensboro','NC',ds_result.home_type,ds_result.bedrooms,ds_result.bathrooms,ds_result.home_size,ds_result.property_size,ds_result.year_built,upd_result.year_updated,upd_result.num_floors,upd_result.parking_type,upd_result.heating_sources,upd_result.heating_system,upd_result.floor_material,upd_result.num_rooms,str(upd_result.neighborhood),str(upd_result.school_district),s,str(upd_result.last_sold_date),str(upd_result.last_sold_price),upd_result.appliances,upd_result.roof,upd_result.rooms,t)
+                    insert_home(address,27401,'Greensboro','NC',ds_result.home_type,ds_result.bedrooms,ds_result.bathrooms,ds_result.home_size,ds_result.property_size,ds_result.year_built,upd_result.year_updated,upd_result.num_floors,upd_result.parking_type,upd_result.heating_sources,upd_result.heating_system,upd_result.floor_material,upd_result.num_rooms,str(upd_result.neighborhood),str(upd_result.school_district),s,ds_result.last_sold_date,ds_result.last_sold_price,upd_result.appliances,upd_result.roof,upd_result.rooms,t)
                 else:
                     s = 0
                     t = 0
@@ -133,7 +132,6 @@ def main():
     
                 
 main()
-        
         
 ## OLD QUERY STATEMENT
 ## "INSERT INTO home_data(street_address,zip_code,city,price,home_type,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,year_updated,number_of_floors,parking_type,heating_sources,heating_system,floor_covering,number_of_rooms,neighborhood,school_district,sold_binary,last_sold_date,last_sale_price,appliances,roof_type,room_types)"
