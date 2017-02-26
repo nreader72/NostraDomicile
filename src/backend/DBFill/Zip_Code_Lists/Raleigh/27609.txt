@@ -1,0 +1,495 @@
+﻿141 Park And N Hills St, Raleigh, NC
+5917 Sentinel Dr
+3337 Granville Dr
+5155 Windy Hill Dr APT 102
+6005 Applewood Ln
+1551 Laureldale Dr
+222 Westridge Dr
+412 Drummond Dr
+1113 Marlowe Rd
+6350 Terra Verde Dr, Raleigh, NC
+5412 Sweetbriar Dr
+6500 Paces Arbor Cir, Raleigh, NC
+889 Wake Towne Dr # UYL4DP
+2652 Saint Marys St
+889 Wake Towne Dr # 6KNZ5B
+889 Wake Towne Dr # EJCTSC
+889 Wake Towne Dr # FPJUPJ
+5514 Forest Oaks Dr
+1331 Springlawn Ct
+3608 Browning Pl
+231 Calibre Chase Dr, Raleigh, NC
+5505 Fieldstone Dr
+5800 Nottoway Ct APT G
+1500 Sunbow Falls Ln, Raleigh, NC
+4905 Auburn Rd
+5922 Carmel Ln
+313 Glen Valley Dr
+Garden Crest Cir
+ 430 Allister Dr, Raleigh, NC
+2640 Saint Marys St
+1220 Manassas Ct APT H
+512 Emerson Dr
+5344 Topspin Ct
+5364 Cypress Ln
+5348 Topspin Ct
+5343 Topspin Ct
+5336 Cypress Ln
+5360 Cypress Ln
+1612 Doubles Ct
+5347 Topspin Ct
+5355 Cypress Ln
+5356 Cypress Ln
+5347 Cypress Ln
+1609 Doubles Ct
+5328 Cypress Ln
+6809 Elderberry Dr
+1812 Wickersham Dr
+2208 Sand Creek Ct
+529 Waggoner Dr
+17 Cedar Ln
+00000 Bates Aston Rd
+905 Los Altos Trl
+1210 Aransas Dr
+3512 Sunrise Ranch Rd
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+5906 St Ives Ct
+529 Waggoner Dr
+9125 Maple Canyon Dr
+6809 Elderberry Dr
+3512 Sunrise Ranch Rd
+17 Cedar Ln
+1210 Aransas Dr
+905 Los Altos Trl
+00000 Bates Aston Rd
+9745 Rancho Dr
+336 Eastwood Ave
+4 Crosslands Ct
+416 Hazelwood Dr W
+3129 Sondra Dr APT 302
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+8617 Amhurst Ct
+4756 Veronica Cir
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+6809 Elderberry Dr
+1812 Wickersham Dr
+2208 Sand Creek Ct
+529 Waggoner Dr
+17 Cedar Ln
+00000 Bates Aston Rd
+905 Los Altos Trl
+1210 Aransas Dr
+3512 Sunrise Ranch Rd
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+529 Waggoner Dr
+5906 St Ives Ct
+2208 Sand Creek Ct
+1812 Wickersham Dr
+00000 Bates Aston Rd
+905 Los Altos Trl
+1210 Aransas Dr
+17 Cedar Ln
+3512 Sunrise Ranch Rd
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+2208 Sand Creek Ct
+9125 Maple Canyon Dr
+6809 Elderberry Dr
+5906 St Ives Ct
+3512 Sunrise Ranch Rd
+17 Cedar Ln
+1210 Aransas Dr
+905 Los Altos Trl
+00000 Bates Aston Rd
+9745 Rancho Dr
+336 Eastwood Ave
+4 Crosslands Ct
+416 Hazelwood Dr W
+3129 Sondra Dr APT 302
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+8617 Amhurst Ct
+4756 Veronica Cir
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+6809 Elderberry Dr
+1812 Wickersham Dr
+2208 Sand Creek Ct
+529 Waggoner Dr
+3512 Sunrise Ranch Rd
+17 Cedar Ln
+1210 Aransas Dr
+905 Los Altos Trl
+00000 Bates Aston Rd
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+8617 Amhurst Ct
+4756 Veronica Cir
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+5906 St Ives Ct
+529 Waggoner Dr
+9125 Maple Canyon Dr
+6809 Elderberry Dr
+3512 Sunrise Ranch Rd
+17 Cedar Ln
+1210 Aransas Dr
+905 Los Altos Trl
+00000 Bates Aston Rd
+9745 Rancho Dr
+336 Eastwood Ave
+4 Crosslands Ct
+416 Hazelwood Dr W
+3129 Sondra Dr APT 302
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+8617 Amhurst Ct
+4756 Veronica Cir
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+529 Waggoner Dr
+5906 St Ives Ct
+2208 Sand Creek Ct
+1812 Wickersham Dr
+17 Cedar Ln
+00000 Bates Aston Rd
+905 Los Altos Trl
+3512 Sunrise Ranch Rd
+1210 Aransas Dr
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+2208 Sand Creek Ct
+9125 Maple Canyon Dr
+6809 Elderberry Dr
+5906 St Ives Ct
+00000 Bates Aston Rd
+905 Los Altos Trl
+1210 Aransas Dr
+17 Cedar Ln
+3512 Sunrise Ranch Rd
+9745 Rancho Dr
+336 Eastwood Ave
+4 Crosslands Ct
+416 Hazelwood Dr W
+3129 Sondra Dr APT 302
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+6809 Elderberry Dr
+1812 Wickersham Dr
+2208 Sand Creek Ct
+529 Waggoner Dr
+3512 Sunrise Ranch Rd
+17 Cedar Ln
+1210 Aransas Dr
+905 Los Altos Trl
+00000 Bates Aston Rd
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+8617 Amhurst Ct
+4756 Veronica Cir
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+2208 Sand Creek Ct
+9125 Maple Canyon Dr
+6809 Elderberry Dr
+5906 St Ives Ct
+17 Cedar Ln
+00000 Bates Aston Rd
+905 Los Altos Trl
+3512 Sunrise Ranch Rd
+1210 Aransas Dr
+9745 Rancho Dr
+336 Eastwood Ave
+4 Crosslands Ct
+416 Hazelwood Dr W
+3129 Sondra Dr APT 302
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+2208 Sand Creek Ct
+9125 Maple Canyon Dr
+6809 Elderberry Dr
+5906 St Ives Ct
+00000 Bates Aston Rd
+905 Los Altos Trl
+1210 Aransas Dr
+17 Cedar Ln
+3512 Sunrise Ranch Rd
+9745 Rancho Dr
+336 Eastwood Ave
+4 Crosslands Ct
+416 Hazelwood Dr W
+3129 Sondra Dr APT 302
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+6809 Elderberry Dr
+1812 Wickersham Dr
+2208 Sand Creek Ct
+529 Waggoner Dr
+17 Cedar Ln
+00000 Bates Aston Rd
+905 Los Altos Trl
+3512 Sunrise Ranch Rd
+1210 Aransas Dr
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+2208 Sand Creek Ct
+9125 Maple Canyon Dr
+6809 Elderberry Dr
+5906 St Ives Ct
+17 Cedar Ln
+00000 Bates Aston Rd
+905 Los Altos Trl
+1210 Aransas Dr
+3512 Sunrise Ranch Rd
+9745 Rancho Dr
+336 Eastwood Ave
+4 Crosslands Ct
+416 Hazelwood Dr W
+3129 Sondra Dr APT 302
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+529 Waggoner Dr
+5906 St Ives Ct
+2208 Sand Creek Ct
+1812 Wickersham Dr
+17 Cedar Ln
+00000 Bates Aston Rd
+905 Los Altos Trl
+1210 Aransas Dr
+3512 Sunrise Ranch Rd
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+6809 Elderberry Dr
+1812 Wickersham Dr
+2208 Sand Creek Ct
+529 Waggoner Dr
+17 Cedar Ln
+00000 Bates Aston Rd
+905 Los Altos Trl
+3512 Sunrise Ranch Rd
+1210 Aransas Dr
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+6809 Elderberry Dr
+1812 Wickersham Dr
+2208 Sand Creek Ct
+529 Waggoner Dr
+17 Cedar Ln
+00000 Bates Aston Rd
+905 Los Altos Trl
+3512 Sunrise Ranch Rd
+1210 Aransas Dr
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
+529 Waggoner Dr
+5906 St Ives Ct
+2208 Sand Creek Ct
+1812 Wickersham Dr
+00000 Bates Aston Rd
+905 Los Altos Trl
+1210 Aransas Dr
+17 Cedar Ln
+3512 Sunrise Ranch Rd
+9745 Rancho Dr
+3129 Sondra Dr APT 302
+416 Hazelwood Dr W
+4 Crosslands Ct
+336 Eastwood Ave
+628 Loxley Ln
+5241 Blue Valley Ct
+1606 Harmon Ter
+4756 Veronica Cir
+8617 Amhurst Ct
+1143 Trinity Trl
+9751 Rock Dove Cir
+4861 Parkview Hills Ln
+702 Dunaway Dr
+3800 Mahonia Ct
+4017 Diamond Ridge Dr
