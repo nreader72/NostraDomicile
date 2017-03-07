@@ -14,15 +14,17 @@
       line-height: 1.8;
       color: #f5f6f7;
   }
+  h1 {      font-size: 250%;     } 
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
+	  
       background-color: #1abc9c; /* Green */
       color: #ffffff;
   }
   .bg-2 { 
-      background-color: #474e5d; /* Dark Blue */
-      color: #ffffff;
+      background-color: #d3d3d3; /* Dark Blue */
+      color: #555555;
   }
   .bg-3 { 
       background-color: #ffffff; /* White */
@@ -30,7 +32,7 @@
   }
   .bg-4 { 
       background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
+      color: #555555;
   }
   .container-fluid {
       padding-top: 70px;
@@ -42,7 +44,7 @@
       border: 0;
       border-radius: 0;
       margin-bottom: 0;
-      font-size: 12px;
+      font-size: 14px;
       letter-spacing: 5px;
   }
   .navbar-nav  li a:hover {
@@ -61,7 +63,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">NostraDomicile</a>
+      <a class="navbar-brand"  href="#">NostraDomicile </a>
+	  <style> font-size: 20px </style>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -78,21 +81,26 @@
 
 
 <!-- First Container -->
-<div class="container-fluid bg-1 text-center">
-  <h2 class="margin">Smart Solutions For Data Driven Real Estate Queries</h2>
-  <img src="nostraPicture.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="300" height="300">
+<div class="container-fluid text-center" style="background-image: url('background2.jpeg')">
+  <h1 style="color:#ffffff" class="margin"><b>Smart Solutions For Data Driven Real Estate Queries</b></h1>
+  <img src="statsImage2.jpeg" class="img-responsive img-circle margin" style="display:inline"  width="150" height="150">
+  <img src="house.png" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="150" height="150">
+  <img src="nostraPicture.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="250" height="250">
+  <img src="house.png" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="150" height="150">
+  <img src="statsImage2.jpeg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="150" height="150">
   </div>
   
 
 <!-- Second Container -->
-<div class="container-fluid bg-2 text-center">
-  <h3 class="margin">Most Important Factors Leading to Sale by Zip Code</h3>
+<div class="container-fluid bg-4 text-center">
+  <h3 style="color:#ffffff" class="margin">Please Enter Your Zip Code Of Interest </h3>
+  <p><input type = "text" ng-model = "NostraDomicile"></p>
+         <p><span ng-bind = "NostraDomicile"></span></p>
   <div class="form-group">
   <!--define app-->
-<div ng-app = "NostraDomicile">
 
-<p>Enter your Zip Code: <input type = "text" ng-model = "NostraDomicile"></p>
-         <p><span ng-bind = "NostraDomicile"></span></p>
+<p> ----------------------------------                                      </p>
+<h3 style="color:#ffffff" class="margin">Please Enter Your Home's Attributes</h3>
  </div>
  <div class="btn-toolbar">
     <!--Default buttons with dropdown menu-->
@@ -127,7 +135,7 @@
         </ul>
     </div>
 	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
+        <button type="button" class="btn btn-default">Square Ft</button>
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">6</a></li>
@@ -140,7 +148,7 @@
         </ul>
     </div>
 	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
+        <button type="button" class="btn btn-default">Acreage</button>
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">6</a></li>
@@ -153,7 +161,7 @@
         </ul>
     </div>
 	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
+        <button type="button" class="btn btn-default">Year Built</button>
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">6</a></li>
@@ -166,7 +174,7 @@
         </ul>
     </div>
 	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
+        <button type="button" class="btn btn-default">Stories</button>
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">6</a></li>
@@ -179,7 +187,7 @@
         </ul>
     </div>
 	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
+        <button type="button" class="btn btn-default">Neighborhood</button>
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">6</a></li>
@@ -192,7 +200,7 @@
         </ul>
     </div>
 	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
+        <button type="button" class="btn btn-default">School</button>
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">6</a></li>
@@ -205,7 +213,7 @@
         </ul>
     </div>
 	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
+        <button type="button" class="btn btn-default">Home Type</button>
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">6</a></li>
@@ -218,7 +226,7 @@
         </ul>
     </div>
 	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
+        <button type="button" class="btn btn-default">Parking</button>
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">6</a></li>
@@ -231,7 +239,7 @@
         </ul>
     </div>
 	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
+        <button type="button" class="btn btn-default">Price</button>
         <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">6</a></li>
@@ -243,46 +251,7 @@
             
         </ul>
     </div>
-	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
-        <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#">6</a></li>
-            <li><a href="#">5</a></li>
-			<li><a href="#">4</a></li>
-            <li><a href="#">3</a></li>
-			<li><a href="#">2</a></li>
-            <li><a href="#">1</a></li>
-            
-        </ul>
-    </div>
-	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
-        <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#">6</a></li>
-            <li><a href="#">5</a></li>
-			<li><a href="#">4</a></li>
-            <li><a href="#">3</a></li>
-			<li><a href="#">2</a></li>
-            <li><a href="#">1</a></li>
-            
-        </ul>
-    </div>
-	<div class="btn-group">
-        <button type="button" class="btn btn-default">Blank</button>
-        <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#">6</a></li>
-            <li><a href="#">5</a></li>
-			<li><a href="#">4</a></li>
-            <li><a href="#">3</a></li>
-			<li><a href="#">2</a></li>
-            <li><a href="#">1</a></li>
-            
-        </ul>
-    </div>
-    
+	  
     
 </div>
 
@@ -292,10 +261,13 @@
   </div>
 
 <!-- Third Container (Grid) -->
-<div class="container-fluid bg-1 text-center">
-<div class="row">
+<div class="container-fluid bg-2 text-center">
+<div class= "card-group">
+<!--<div class="row">-->
 <div class="col-sm-4">
-<div class="card" style="width: 20rem;">
+<!--<div class="card" style="width: 20rem;">
+<div class="card card-inverse card-info mb-3 text-center">-->
+<div class="card card-outline-primary mb-3 text-center" style="background-color: #333; border-color: #333;">
   <img class="card-img-top" src="houseSold.jpeg" alt="Card image cap">
   <div class="card-block">
     <h4 class="card-title">Prediction on Sale</h4>
@@ -305,8 +277,9 @@
   </div>
   </div>
   <div class="col-sm-4">
-<div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="homeAtt.jpeg" alt="Card image cap">
+<!--<div class="card" style="width: 20rem;">-->
+<div class="card card-outline-primary mb-3 text-center">
+  <img class="card-img-top" src="homeAtt3.png" alt="Card image cap">
   <div class="card-block">
     <h4 class="card-title">Prediction on Most Important Attributes</h4>
     <p>Click the button below to see the most attractive factors leading to home sales in the chosen area.</p>
@@ -315,7 +288,8 @@
 </div>
 </div>
 <div class="col-sm-4">
-<div class="card" style="width: 20rem;">
+<!--<div class="card" style="width: 20rem;">-->
+<div class="card card-outline-primary mb-3 text-center">
   <img class="card-img-top" src="statsImage.jpeg" alt="Card image cap">
   <div class="card-block">
     <h4 class="card-title">Data Visualizations</h4>
@@ -326,15 +300,16 @@
 </div>
 </div>
 </div>
+</div>
 <!--<div class="container-fluid bg-3 text-center">    
   <h3 class="margin">Will Your House Sell?</h3><br>
   <div class="row">
     <div class="form-group">
-  <!--<label for="usr">Please Enter Your Zip Code:</label>
-  <input type="text" class="form-control" id="usr">-->
-  <!--define app-->
-<!--<div ng-app = "NostraDomicile">
-<!--<div ng-app = "mainApp" ng-controller = "studentController">
+  <label for="usr">Please Enter Your Zip Code:</label>
+  <input type="text" class="form-control" id="usr">
+  <!--define app
+<div ng-app = "NostraDomicile">
+<div ng-app = "mainApp" ng-controller = "studentController">
          Enter first name: <input type = "text" ng-model = "student.firstName"><br><br>
          Enter last name: <input type = "text" ng-model = "student.lastName"><br>
          <br>
@@ -356,10 +331,10 @@
                }
             };
          });
-      </script>-->
-<!--<p>Enter your Zip Code: <input type = "text" ng-model = "NostraDomicile"></p>
+      </script>
+<p>Enter your Zip Code: <input type = "text" ng-model = "NostraDomicile"></p>
          <p><span ng-bind = "NostraDomicile"></span></p>
- </div>
+ </div>-->
 
   
 
