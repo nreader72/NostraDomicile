@@ -25,5 +25,6 @@ CREATE TABLE home_data (
     appliances VARCHAR(500),
     roof_type VARCHAR(255),
     room_types VARCHAR(500),
-    updated_properties INT NOT NULL CHECK (updated_properties > - 1 AND updated_properties < 2)
+    updated_properties INT NOT NULL CHECK (updated_properties > - 1 AND updated_properties < 2),
+    price_range INT(5)
 )
