@@ -140,3 +140,4 @@ STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, "static"),
 	'~/NostraDomicile/src/backend/Senior_Project/NostraDomicile/static/'
 )
+
