@@ -15,7 +15,7 @@ NostraDomicile will accomplish this goal by retrieving and storing housing marke
 ![alt tag](https://cloud.githubusercontent.com/assets/10904693/23509663/8bee9ca0-ff24-11e6-8cf8-1b947555413d.png)
  
 
-## Contributers:
+## Contributors:
 * Richard Andrews(Backend)
 * Ochaun Marshall(Machine Learning)
 * Christian Simaan(Database)
