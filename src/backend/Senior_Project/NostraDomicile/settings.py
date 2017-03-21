@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'NostraDomicile.wsgi.application'
 if 'RDS_HOSTNAME' in os.environ:
 	DATBASES = {
 		'default':{
-			'ENGINE': 'mysql.connector.django',
+			'ENGINE': 'django.db.backends.mysql',
 			'NAME': os.environ['RDS_DB_NAME'],
 			'USER': os.environ['RDS_USERNAME'],
 			'PASSWORD': os.environ['RDS_PASSWORD'],
@@ -85,7 +85,7 @@ if 'RDS_HOSTNAME' in os.environ:
 else:
 	DATABASES = {
     		'default': {
-        		'ENGINE': 'mysql.connector.django',
+        		'ENGINE': 'django.db.backends.mysql',
         		'NAME': 'PyZillow_Data',
 			'USER': 'ctsimaan',
 			'PASSWORD': 'SeniorProject490',
@@ -131,13 +131,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/NostraDomicile/static/'
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'NostraDomicile/static')
 
 STATICFILES_DIRS = (
-	os.path.join(BASE_DIR, "static"),
-	'~/NostraDomicile/src/backend/Senior_Project/NostraDomicile/static/'
+	os.path.join(BASE_DIR, "NostraDomicile/static"),
+	'NostraDomicile/static/'
 )
 

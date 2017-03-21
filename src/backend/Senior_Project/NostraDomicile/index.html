@@ -1,11 +1,13 @@
-from django.http import HttpResponse
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Tue, 21 Mar 2017 04:02:08 GMT
+Server: Apache/2.4.25 (Amazon) mod_wsgi/3.5 Python/2.7.12
+X-Frame-Options: SAMEORIGIN
+Content-Length: 13359
+Connection: keep-alive
 
-def test(request):
-	text = 'test'
-	return HttpResponse(text)
 
-def index(request):
-	text = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" ng-app="NostraDomicile">
 <head>
   <title>NostraDomicile</title>
@@ -366,5 +368,4 @@ def index(request):
     </form>
     </div>
 </body>
-</html>'''
-	return HttpResponse(text)
+</html>

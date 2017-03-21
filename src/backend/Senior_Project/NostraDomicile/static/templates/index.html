@@ -1,11 +1,4 @@
-from django.http import HttpResponse
-
-def test(request):
-	text = 'test'
-	return HttpResponse(text)
-
-def index(request):
-	text = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" ng-app="NostraDomicile">
 <head>
   <title>NostraDomicile</title>
@@ -366,5 +359,4 @@ def index(request):
     </form>
     </div>
 </body>
-</html>'''
-	return HttpResponse(text)
+</html>
