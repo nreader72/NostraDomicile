@@ -3,7 +3,7 @@ The goal of the NostraDomicile Project is to create a web application whose two 
 
 NostraDomicile will accomplish this goal by retrieving and storing housing market information using a Zillow API and MySQL database, using machine learning to evaluate housing data and determine factors influencing home sales in a particular area, and creating a user-friendly interface for users to view data about factors influencing home sales and create data visualizations about houses on the market based on user preferences
 
-##Requirements:
+## Requirements:
 * Zillow account to obtain Zillow API ID
 * PyZillow Module to utilize API
 * Server on local host or hosting service(We use AWS)
@@ -11,11 +11,11 @@ NostraDomicile will accomplish this goal by retrieving and storing housing marke
 * Web Application Backend(Django Framework, Python for Machine Learning)
 * Web Application Frontend(AngularJS and Bootstrap)
 
-##System Model with Data Flow:
+## System Model with Data Flow:
 ![alt tag](https://cloud.githubusercontent.com/assets/10904693/23509663/8bee9ca0-ff24-11e6-8cf8-1b947555413d.png)
  
 
-##Contributers:
+## Contributers:
 * Richard Andrews(Backend)
 * Ochaun Marshall(Machine Learning)
 * Christian Simaan(Database)
