@@ -1,12 +1,11 @@
 from django.http import HttpResponse
 
-def test(Request):
+def test(request):
 	text = 'test'
 	return HttpResponse(text)
-def index(request):
-	text = '''
 
-<!DOCTYPE html>
+def index(request):
+	text = '''<!DOCTYPE html>
 <html lang="en" ng-app="NostraDomicile">
 <head>
   <title>NostraDomicile</title>
@@ -20,7 +19,12 @@ def index(request):
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src = "controllers/mainController.js"></script>
+    <!--this snippet is from the old file structure
+
+   {% load static from staticfiles %}
+    <script src = "{% static 'controllers/mainController.js' %}"></script>-->
+   <script src = "{% static 'mainController.js' %}"></script>
+
 
   <style>
     body {
@@ -121,13 +125,14 @@ def index(request):
 
 <!-- First Container -->
 <!--<div class="" style="background-image: url('images/backgro1.png')">-->
+<!--CHANGED IMAGES TO STATIC-->
 <div class="container-fluid bg-1 text-center">
   <h1 style="color:#ffffff" class="margin"><b>Smart Solutions For Data Driven Real Estate Queries</b></h1>
-  <img src="images/hist3.png" class="img-responsive margin" style="display:inline"  width="200" height="200">
-  <img src="images/statLine.png" class="img-responsive img-circle margin" style="display:inline"  width="310" height="310">
-  <img src="images/nostraPicture.jpg" class="img-responsive img-circle margin" style="display:inline"  width="250" height="250">
-  <img src="images/statLine.png" class="img-responsive img-circle margin" style="display:inline"  width="310" height="310">
-  <img src="images/hist3.png" class="img-responsive margin" style="display:inline"  width="200" height="200">
+  <img src="{% static 'hist3.png' %}" class="img-responsive margin" style="display:inline"  width="200" height="200">
+  <img src="{% static 'statLine.png' %}" class="img-responsive img-circle margin" style="display:inline"  width="310" height="310">
+  <img src="{% static 'nostraPicture.jpg' %}" class="img-responsive img-circle margin" style="display:inline"  width="250" height="250">
+  <img src="{% static 'statLine.png' %}" class="img-responsive img-circle margin" style="display:inline"  width="310" height="310">
+  <img src="{% static 'hist3.png' %}" class="img-responsive margin" style="display:inline"  width="200" height="200">
 
 </div>
 
@@ -274,7 +279,7 @@ def index(request):
   <!--<input type="text" class="form-control" id="usr">-->
 
 
-
+<!--STATIC CHANGED HERE FROM IMAGES FOLDER-->
 <!-- Third Container (Grid) -->
 <div class="container-fluid bg-2 text-center">
   <div class= "card-group">
@@ -361,8 +366,5 @@ def index(request):
     </form>
     </div>
 </body>
-</html>
-
-
-'''
+</html>'''
 	return HttpResponse(text)
