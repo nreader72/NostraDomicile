@@ -1,7 +1,9 @@
 from django.http import HttpResponse
+from NostraDomicile.models import HomeData
 
 def test(request):
-	text = 'test'
+	text = HomeData.objects.all()
+		
 	return HttpResponse(text)
 
 def index(request):

@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'NostraDomicile',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -72,7 +73,7 @@ WSGI_APPLICATION = 'NostraDomicile.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 if 'RDS_HOSTNAME' in os.environ:
-	DATBASES = {
+	DATABASES = {
 		'default':{
 			'ENGINE': 'django.db.backends.mysql',
 			'NAME': os.environ['RDS_DB_NAME'],
@@ -89,10 +90,11 @@ else:
         		'NAME': 'PyZillow_Data',
 			'USER': 'ctsimaan',
 			'PASSWORD': 'SeniorProject490',
-			'HOST': 'nostradomicile-data.c6x7uypetdqh.us-west-2.rds.amazonaws.com',
+			'HOST': 'localhost',
 			'PORT': '3306'
     		}
 	}
+
 
 
 # Password validation
@@ -131,13 +133,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/NostraDomicile/static/'
+STATIC_URL = '/opt/python/current/app/NostraDomicile/static/'
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'NostraDomicile/static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, '/NostraDomicile/static')
 
 STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, "NostraDomicile/static"),
-	'NostraDomicile/static/'
+	'static/'
 )
 
