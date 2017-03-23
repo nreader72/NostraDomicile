@@ -25,11 +25,12 @@
       line-height: 1.8;
       color: #f5f6f7;
     }
-    h1 {      font-size: 250%;     }
+    h2 {      font-size: 200%;     }
     p {font-size: 16px;}
-    .margin {margin-bottom: 45px;}
-
-    h2 {color: black}
+    .margin {margin-bottom: 25px;}
+    h3 {
+        font-size:150%;}
+    h3 {color: black}
     h3 .btn-group { display: inline-block; }
 
     .bg-1 {
@@ -74,6 +75,26 @@
     .popover-title{
         background: #555555;
     }
+    .modal-dialog {
+        width: 700px;
+        position: relative;
+        top: 20%;
+        left: 25%;
+        margin-top: -25px;
+        margin-left: 0px;
+        padding: 20px;
+    }
+    .modal-header, .close {
+        background-color: #1abc9c;
+        color:white !important;
+        text-align: center;
+        font-size: 30px;
+    }
+    .modal-footer {
+        background-color: #f9f9f9;
+        text-align: left;
+    }
+      
   </style>
 
 </head>
@@ -117,12 +138,12 @@
 <!--<div class="" style="background-image: url('images/backgro1.png')">-->
 <!--CHANGED IMAGES TO STATIC-->
 <div class="container-fluid bg-1 text-center">
-  <h1 style="color:#ffffff" class="margin"><b>Smart Solutions For Data Driven Real Estate Queries</b></h1>
-  <img src="images/hist3.png" class="img-responsive margin" style="display:inline"  width="200" height="200">
-  <img src="images/statLine.png" class="img-responsive img-circle margin" style="display:inline"  width="310" height="310">
-  <img src="images/nostraPicture.jpg" class="img-responsive img-circle margin" style="display:inline"  width="250" height="250">
-  <img src="images/statLine.png" class="img-responsive img-circle margin" style="display:inline"  width="310" height="310">
-  <img src="images/hist3.png" class="img-responsive margin" style="display:inline"  width="200" height="200">
+  <h2 style="color:#ffffff" class="margin"><b>Smart Solutions For Data Driven Real Estate Queries</b></h2>
+  <img src="images/hist3.png" class="img-responsive margin" style="display:inline"  width="175" height="175">
+  <img src="images/statLine.png" class="img-responsive img-circle margin" style="display:inline"  width="275" height="275">
+  <img src="images/nostraPicture.jpg" class="img-responsive img-circle margin" style="display:inline"  width="225" height="225">
+  <img src="images/statLine.png" class="img-responsive img-circle margin" style="display:inline"  width="275" height="275">
+  <img src="images/hist3.png" class="img-responsive margin" style="display:inline"  width="175" height="175">
     <div id = "main">
         <div ng-view></div>
     </div>
@@ -140,14 +161,14 @@
 
        <!--working version of user input to variable-->
 
-            <h2 class="margin"> Please Enter Your Zip Code Of Interest
+            <h3 class="margin"> Please Enter Your Zip Code Of Interest
                 <button type="button" class="btn btn-default"  data-toggle="popover" data-trigger="hover" data-content="This zip code
                     may be your own zip code(it must be if you are using the Will My House Sell function below) or
                     a zip code of a home you are interested in purchasing.  The information will be used
                     in the following functions below.  Your information will not be kept.">
                     <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                 </button>
-            </h2>
+            </h3>
 
             <label>
                <input style="color:#555555" ng-model="zipCode" type="text"  placeholder="Zip Code" required ng-minlength="5"
@@ -169,12 +190,12 @@
     <!--define app-->
 
     <p> ----------------------------------                                      </p>
-    <h2 class="margin">Please Enter Your Home's Attributes
+    <h3 class="margin">Please Enter Your Home's Attributes
         <button type="button" class="btn btn-default"  data-toggle="popover" data-trigger="hover" data-content="These attributes
         will be used to predict whether your house will sell in the target zip code or not.  If you are interested in using this
         function please ensure that the zip code you entered above is the same that your home resides in.">
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-        </button></h2>
+        </button></h3>
   </div>
 
 
@@ -287,7 +308,32 @@
         <div class="card-block">
           <h4 class="card-title">Prediction on Sale</h4>
           <p>Click the button below to see if your house will sell based on the attributes you have provided.</p>
-          <a href="#" class="btn btn-primary">Will My House Sell?</a>
+          <!--<a href="#" class="btn btn-primary">Will My House Sell?</a>-->
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Will My House Sell?</button>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4> <span class="glyphicon glyphicon-home"></span>    Will My House Sell?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Your home is predicted to (sell/not sell) based on your submitted data and
+                                the zip code provided.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <p>Thank you for choosing NostraDomicile!</p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
       </div>
     </div>
@@ -298,7 +344,30 @@
         <div class="card-block">
           <h4 class="card-title">Prediction on Most Important Attributes</h4>
           <p>Click the button below to see the most attractive factors leading to home sales in the chosen area.</p>
-          <a href="#" class="btn btn-primary">Most Important Attributes</a>
+          <!--<a href="#" class="btn btn-primary">Most Important Attributes</a>-->
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Most Important Attributes</button>
+
+            <!-- Modal -->
+            <div id="myModal2" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4> <span class="glyphicon glyphicon-option-vertical"></span>    Most Important Attributes</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Most Important Attributes leading to home sell in given area goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <p>Thank you for choosing NostraDomicile!</p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
       </div>
     </div>
@@ -309,7 +378,30 @@
         <div class="card-block">
           <h4 class="card-title">Data Visualizations</h4>
           <p>Click the button below to see a collection of valuable statistics pertaining to the chosen area.</p>
-          <a href="#" class="btn btn-primary">Data Visualizations</a>
+          <!--<a href="#" class="btn btn-primary">Data Visualizations</a>-->
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal3">Data Visualizations</button>
+
+            <!-- Modal -->
+            <div id="myModal3" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4> <span class="glyphicon glyphicon-stats"></span>    Data Visualizations</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Data Visualizations Go Here</p>
+                        </div>
+                        <div class="modal-footer">
+                            <p>Thank you for choosing NostraDomicile!</p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
       </div>
     </div>
@@ -318,40 +410,7 @@
     </div>
 
 
-<!--<div class="container-fluid bg-3 text-center">
-  <h3 class="margin">Will Your House Sell?</h3><br>
-  <div class="row">
-    <div class="form-group">
-  <label for="usr">Please Enter Your Zip Code:</label>
-  <input type="text" class="form-control" id="usr">
-  <!--define app
-<div ng-app = "NostraDomicile">
-<div ng-app = "mainApp" ng-controller = "studentController">
-         Enter first name: <input type = "text" ng-model = "student.firstName"><br><br>
-         Enter last name: <input type = "text" ng-model = "student.lastName"><br>
-         <br>
 
-         You are entering: {{student.fullName()}}
-      </div>
-	   <script>
-         var mainApp = angular.module("mainApp", []);
-
-         mainApp.controller('studentController', function($scope) {
-            $scope.student = {
-               firstName: "Mahesh",
-               lastName: "Parashar",
-
-               fullName: function() {
-                  var studentObject;
-                  studentObject = $scope.student;
-                  return studentObject.firstName + " " + studentObject.lastName;
-               }
-            };
-         });
-      </script>
-<p>Enter your Zip Code: <input type = "text" ng-model = "NostraDomicile"></p>
-         <p><span ng-bind = "NostraDomicile"></span></p>
- </div>-->
 
 
 
