@@ -1,3 +1,6 @@
+import mysql.connector 
+import sqlite3
+import pandas as pd
 from sklearn import svm, metrics
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.cross_validation import KFold
@@ -7,12 +10,22 @@ import numpy as np
 import random
 import time
 
-#//min_terms_preprocess = 10000
-#// dataset = 'all_data_' + str(min_terms_preprocess)+ '.pickle'
+def to_csv():
+    db = mysql.connector.connect(user='oemarsha',password='SeniorProject490',host='http://nostradomicile-data.c6x7vypetdgh.us-west-2.rds.amazonaws.com/',database='PyZillow_Data')
+    cursor = db.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tables = cursor.fetchall()
+    for table_name in tables:
+        table_name = table_name[0]
+        table = pd.read_sql_query("SELECT * from %s" % table_name, db)
+        table.to_csv(table_name + '.csv', index_label='index')
 
-all_data = pickle.load(open(dataset,"r"))
-#file= open('randomforest_experiment.txt','w')
+
+
+dataset = open('PyZillow_Data.csv','rb') 
 print "Random Forest is loading..."
+all_data = open(dataset,"r")
+#file= open('randomforest_experiment.txt','w')
 random.shuffle(all_data)
 n_samples = len(all_data)
 X = []
