@@ -20,18 +20,18 @@ app.config(function($routeProvider) {
 */
         // route for the about page
         .when('/about', {
-            templateUrl : 'pages/about.html',
+            templateUrl : 'static/about.html',
             controller  : 'aboutController'
         })
 
         .when('/blog', {
-            templateUrl : 'pages/blog.html',
+            templateUrl : 'static/blog.html',
             controller  : 'blogController'
         })
 
         // route for the contact page
         .when('/contact', {
-            templateUrl : 'pages/contact.html',
+            templateUrl : 'static/contact.html',
             controller  : 'contactController'
         });
 });
@@ -43,7 +43,15 @@ app.config(function($routeProvider) {
 });*/
 
 app.controller('aboutController', function($scope) {
-    $scope.message = 'BLAH BLAH BLAH BLAH BLAH BLAH BLAH';
+    $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
+        'are to predict whether a house will sell in a specific area based on the home’s attributes, and given a zip ' +
+        'code, what are the most important factors leading to a sale in that area.'  +
+        ' \n\n ' +
+        '\nNostraDomicile will accomplish this' +
+        ' goal by retrieving and storing housing market information using a Zillow API and MySQL database, using ' +
+        'machine learning to evaluate housing data and determine factors influencing home sales in a particular area,' +
+        ' and creating a user-friendly interface for users to view data about factors influencing home sales and ' +
+        'create data visualizations about houses on the market based on user preferences';
 });
 
 app.controller('contactController', function($scope) {
@@ -154,16 +162,74 @@ app.controller('selectboxCtrl', function ($scope) {
     }];
 });
 
+app.controller('ContactController', function ($scope, $http) {
 
+    $scope.result = 'hidden'
 
-app.controller('SubjectDropDownController', function ($scope) {
+    $scope.resultMessage;
 
-    $scope.subjects = ['Math', 'Physics', 'Chemistry', 'Hindi', 'English'];
-    $scope.selectedItem;
-    $scope.dropboxitemselected = function () {
+    $scope.formData; //formData is an object holding the name, email, subject, and message
 
-        $scope.selectedItem = item;
-        alert("drop box item selected");
+    $scope.submitButtonDisabled = false;
+
+    $scope.submitted = false; //used so that form errors are shown only after the form has been submitted
+
+    $scope.submit = function(contactform) {
+
+        $scope.submitted = true;
+
+        $scope.submitButtonDisabled = true;
+
+        if (contactform.$valid) {
+
+            $http({
+
+                method  : 'POST',
+
+            url     : 'contact-form.php',
+
+            data    : $.param($scope.formData),  //param method from jQuery
+
+            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
+
+        }).success(function(data){
+
+                console.log(data);
+
+                if (data.success) { //success comes from the return json object
+
+                    $scope.submitButtonDisabled = true;
+
+                    $scope.resultMessage = data.message;
+
+                    $scope.result='bg-success';
+
+                } else {
+
+                    $scope.submitButtonDisabled = false;
+
+                    $scope.resultMessage = data.message;
+
+                    $scope.result='bg-danger';
+
+                }
+
+            });
+
+        } else {
+
+            $scope.submitButtonDisabled = false;
+
+            $scope.resultMessage = 'Failed <img src="http://www.chaosm.net/blog/wp-includes/images/smilies/icon_sad.gif" alt=":(" class="wp-smiley">  Please fill out all the fields.';
+
+            $scope.result='bg-danger';
+
+        }
+
     }
+
 });
+
+
+
 
