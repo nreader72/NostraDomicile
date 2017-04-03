@@ -1,14 +1,19 @@
 /**
  * Created by punto on 3/12/2017.
  */
+
+//declaration for the app.controller for this web app, only one(as far as I know), more directives can be added
+    //where ngRoute is
 var app = angular.module("NostraDomicile", ["ngRoute"]);
 
 app.controller('mainController', ['$scope', 'mainController']);
 
+//this is not connected for zip code but probably should be
 var mainController = function ($scope) {
     $scope.zipCode =  {zip_code: 'Zip Code'};
 };
 
+//code for the routing of about, contact, etc, works
 app.config(function($routeProvider) {
     $routeProvider
 
@@ -42,6 +47,9 @@ app.config(function($routeProvider) {
     $scope.message = 'Everyone come and see how good I look!';
 });*/
 
+/*the following three controllers contain some information for the pages, but primarily most of the information
+is in the about.html, blog.html, etc files
+ */
 app.controller('aboutController', function($scope) {
     $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
         'are to predict whether a house will sell in a specific area based on the home’s attributes, and given a zip ' +
@@ -63,7 +71,9 @@ app.controller('blogController', function($scope) {
 });
 
 
-
+/* these are all the select boxes, which I don't know why they don't work, but if you need help figuring it out,
+   I'm sure we could get it figured out quickly
+ */
 app.controller('selectboxCtrl', function ($scope) {
     $scope.BedroomList = [{
         "bedroom": 6
@@ -162,6 +172,8 @@ app.controller('selectboxCtrl', function ($scope) {
     }];
 });
 
+//this is what I was working on when interrupted, its code I found on the internet that I was messing with
+//to get the email stuff working, but we may have to include some php or something with it.
 app.controller('ContactController', function ($scope, $http) {
 
     $scope.result = 'hidden'
