@@ -233,7 +233,7 @@
 
         <br> </br>
 
-        <div class="dropdown" ng-controller="selectboxCtrl">
+-        <div class="btn-group"  ng-controller="selectboxCtrl">
             <select name="bedrooms" ng-model="userSelect1">
       <option value="">Bedrooms</option>
           <option ng-repeat="option in BedroomList" value="{{option.bedroom}}">{{option.bedroom}}</option>
@@ -241,7 +241,7 @@
       </select>
       </div>
 
-      <div class="dropdown"  ng-controller="selectboxCtrl">
+-        <div class="btn-group"  ng-controller="selectboxCtrl">
           <select name="bathroom" ng-model="userSelect2">
               <option value="">Bathrooms</option>
               <option ng-repeat="option in BathroomList" value="{{option.bathroom}}">{{option.bathroom}}</option>
@@ -251,7 +251,7 @@
 
 
 
-        <div class="dropdown"  ng-controller="selectboxCtrl">
+-        <div class="btn-group"  ng-controller="selectboxCtrl">
             <select name="stories" ng-model="storiesSelect">
                 <option value="">Stories</option>
                 <option ng-repeat="option in BedroomList" value="{{option.bedroom}}">{{option.bedroom}}</option>
@@ -260,7 +260,7 @@
 
 
 
-        <div class="dropdown"  ng-controller="selectboxCtrl">
+-        <div class="btn-group"  ng-controller="selectboxCtrl">
             <select name="homeType" ng-model="homeTypeSelect">
                 <option value="">Home Type</option>
                 <option ng-repeat="option in TypeList" value="{{option.type}}">{{option.type}}</option>
@@ -268,7 +268,7 @@
         </div>
 
 
-        <div class="dropdown"  ng-controller="selectboxCtrl">
+-        <div class="btn-group"  ng-controller="selectboxCtrl">
             <select name="parking" ng-model="parkingSelect">
                 <option value="">Parking</option>
                 <option ng-repeat="option in ParkingList" value="{{option.parking}}">{{option.parking}}</option>
