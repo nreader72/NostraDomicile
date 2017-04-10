@@ -1,55 +1,34 @@
-import mysql.connector 
-import sqlite3
-import pandas as pd
-from sklearn import svm, metrics
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.cross_validation import KFold
-from sklearn import metrics
-import joblib
+import sys
 import numpy as np
-import random
-import time
+import pandas as pd
+import csv
+import sklearn
 from sklearn import preprocessing
-#def to_csv():
-#    db = mysql.connector.connect(user='oemarsha',password='SeniorProject490',host='http://nostradomicile-data.c6x7vypetdgh.us-west-2.rds.amazonaws.com/',database='PyZillow_Data')
-#    cursor = db.cursor()
-#    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-#    tables = cursor.fetchall()
-#    for table_name in tables:
-#        table_name = table_name[0]
-#        table = pd.read_sql_query("SELECT * from %s" % table_name, db)
-#        table.to_csv(table_name + '.csv', index_label='index')
-dataset = pd.read_csv('28205.csv')
-print "Random Forest is loading..."
-all_data = dataset.as_matrix
-print(all_data)
+from sklearn.ensemble import RandomForestClassifier
 
+f = open(sys.argv[1],'rb')
+reader = csv.reader(f)
+headers = reader.next() #headers are the plaintext features
+df = pd.read_csv(sys.argv[1], sep=',',skiprows=[0],names=headers)
+le = preprocessing.LabelEncoder() 
+df = df.apply(le.fit_transform) # changes str val in features to ints
 
+#data split
+np.random.shuffle(df.values)
+all_val = df.drop('sold_binary', axis=1)
+all_label = df[['sold_binary']]
 
-le = preprocessing.LabelEncoder()
-#n_samples = len(all_data)
-#le.fit(all_data)
+observations = len(all_val.index)
+trainTestSplit = observations // 3
 
-X = []
-y = []
-for value,label in all_data:
-	X.append(value)
-	y.append(label)
-X = np.array(X)
-y = np.array(y)
+train_val = all_val.head(observations - trainTestSplit)
+train_label = all_label.head(observations - trainTestSplit)
+test_val = all_val.tail(trainTestSplit)
+test_label = all_label.tail(trainTestSplit)
 
-le.fit(y)
-np.random.shuffle(all_data)
-kf = KFold(n_samples, n_folds=10)
-k = 0
-start_time = time.time()
+rf = RandomForestClassifier(n_estimators=3000)
+rf.fit(train_val,train_label)
 
+#prediction = rf.predict(test_val)
+print rf.score(test_val,test_label)
 
-for train, test in kf:
-    rfc = RandomForestClassifier(n_estimators=100)	
-    rfc.fit(X[train], y[train])
-    predicted = rfc.predict(X[train])
-    file.write(str(rfc.score(X[test],y[test])))
-    file.write(str("\n"))
-   
-print "Random Forest complete"
