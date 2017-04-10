@@ -1,19 +1,14 @@
 /**
  * Created by punto on 3/12/2017.
  */
-
-//declaration for the app.controller for this web app, only one(as far as I know), more directives can be added
-    //where ngRoute is
 var app = angular.module("NostraDomicile", ["ngRoute"]);
 
 app.controller('mainController', ['$scope', 'mainController']);
 
-//this is not connected for zip code but probably should be
 var mainController = function ($scope) {
     $scope.zipCode =  {zip_code: 'Zip Code'};
 };
 
-//code for the routing of about, contact, etc, works
 app.config(function($routeProvider) {
     $routeProvider
 
@@ -47,9 +42,6 @@ app.config(function($routeProvider) {
     $scope.message = 'Everyone come and see how good I look!';
 });*/
 
-/*the following three controllers contain some information for the pages, but primarily most of the information
-is in the about.html, blog.html, etc files
- */
 app.controller('aboutController', function($scope) {
     $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
         'are to predict whether a house will sell in a specific area based on the home’s attributes, and given a zip ' +
@@ -67,13 +59,11 @@ app.controller('contactController', function($scope) {
 });
 
 app.controller('blogController', function($scope) {
-    $scope.message = 'BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG';
+    $scope.message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, ';
 });
 
 
-/* these are all the select boxes, which I don't know why they don't work, but if you need help figuring it out,
-   I'm sure we could get it figured out quickly
- */
+
 app.controller('selectboxCtrl', function ($scope) {
     $scope.BedroomList = [{
         "bedroom": 6
@@ -95,11 +85,11 @@ app.controller('selectboxCtrl', function ($scope) {
             $scope.msg = 'Please Select Dropdown Value';
     };
     $scope.BathroomList = [{
-        "bathroom": 6
+        bathroom: '6'
     }, {
-        "bathroom": 5.5
+        "bathroom": '5.5'
     }, {
-        "bathroom": 5
+        'bathroom': "5"
     }, {
         "bathroom": 4.5
     }, {
@@ -172,8 +162,6 @@ app.controller('selectboxCtrl', function ($scope) {
     }];
 });
 
-//this is what I was working on when interrupted, its code I found on the internet that I was messing with
-//to get the email stuff working, but we may have to include some php or something with it.
 app.controller('ContactController', function ($scope, $http) {
 
     $scope.result = 'hidden'
