@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
     <!--this snippet is from the old file structure-->
     <!--<script src = "controllers/mainController.js"></script>-->
-   <script src = "static/mainController.js?v=0.02"></script>
+   <script src = "static/mainController.js?v=0.11"></script>
 
   <style>
     body {
@@ -233,45 +233,26 @@
         <br> </br>
 
 -        <div class="btn-group"  ng-controller="selectboxCtrl">
-            <select name="bedrooms" ng-model="userSelect1">
-      <option value="">Bedrooms</option>
-          <option ng-repeat="option in BedroomList" value="{{option.bedroom}}">{{option.bedroom}}</option>
-          <!--here would be django variable ={{userSelect1}}-->
-      </select>
+            <select name="bedroomsNum" id="bedroomSelect" ng-init="userSelect1='0'" ng-model="userSelect1" ng-options="bedroom.value as bedroom.text for bedroom in bedrooms"></select>
       </div>
 
 -        <div class="btn-group"  ng-controller="selectboxCtrl">
-          <select name="bathroom" ng-model="userSelect2">
-              <option value="">Bathrooms</option>
-              <option ng-repeat="option in BathroomList" value="{{option.bathroom}}">{{option.bathroom}}</option>
-          </select>
+          <select name="bathroomsNum" id="bathroomSelect" ng-init="userSelect2='0'" ng-model="userSelect2" ng-options="bathroom.value as bathroom.text for bathroom in bathrooms"></select></select>
       </div>
 
-
-
-
 -        <div class="btn-group"  ng-controller="selectboxCtrl">
-            <select name="stories" ng-model="storiesSelect">
-                <option value="">Stories</option>
-                <option ng-repeat="option in BedroomList" value="{{option.bedroom}}">{{option.bedroom}}</option>
-            </select>
+            <select name="storiesNum" id="storiesSelect" ng-init="userSelect3='0'" ng-model="userSelect3" ng-options="story.value as story.text for story in stories"></select>
         </div>
 
 
 
 -        <div class="btn-group"  ng-controller="selectboxCtrl">
-            <select name="homeType" ng-model="homeTypeSelect">
-                <option value="">Home Type</option>
-                <option ng-repeat="option in TypeList" value="{{option.type}}">{{option.type}}</option>
-            </select>
+            <select name="homeType" id="homeSelect" ng-init="userSelect4='0'" ng-model="userSelect4" ng-options="type.value as type.text for type in TypeList"></select></select>
         </div>
 
 
 -        <div class="btn-group"  ng-controller="selectboxCtrl">
-            <select name="parking" ng-model="parkingSelect">
-                <option value="">Parking</option>
-                <option ng-repeat="option in ParkingList" value="{{option.parking}}">{{option.parking}}</option>
-            </select>
+            <select name="parkingType" id="parkingSelect" ng-init="userSelect5='0'" ng-model="userSelect5" ng-options="parking.value as parking.text for parking in ParkingList"></select></select>
         </div>
 
 <p>   ----------------------------  </p>
