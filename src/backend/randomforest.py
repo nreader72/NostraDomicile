@@ -4,7 +4,10 @@ import pandas as pd
 import csv
 import sklearn
 from sklearn import preprocessing
+from sklearn import metrics
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.externals import joblib
 
 f = open(sys.argv[1],'rb')
 reader = csv.reader(f)
@@ -26,9 +29,12 @@ train_label = all_label.head(observations - trainTestSplit)
 test_val = all_val.tail(trainTestSplit)
 test_label = all_label.tail(trainTestSplit)
 
-rf = RandomForestClassifier(n_estimators=3000)
-rf.fit(train_val,train_label)
+rf = RandomForestClassifier(n_estimators=2000,oob_score=True)
+rf.fit(train_val.values,train_label.values.ravel())
+predicted = rf.predict(test_val.values)
 
-#prediction = rf.predict(test_val)
-print rf.score(test_val,test_label)
+print "Random Forest accuracy score is: " + str(accuracy_score(test_label.values,predicted,normalize='False'))
+print str("Out of Bag score is: " + str(rf.oob_score_))
+print str("Classification report for classifier %s \n%s\n" % (rf, metrics.classification_report(test_label.values, predicted)))
 
+joblib.dump(rf,'rfTemp.pkl')
