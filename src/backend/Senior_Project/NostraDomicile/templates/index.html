@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
     <!--this snippet is from the old file structure-->
     <!--<script src = "controllers/mainController.js"></script>-->
-   <script src = "static/mainController.js?v=0.01"></script>
+   <script src = "static/mainController.js?v=0.02"></script>
 
   <style>
     body {
@@ -156,7 +156,7 @@
 
 <div class="container-fluid bg-5 text-center">
 
-    <form name="myForm">
+    <form ng-submit="submit(rfForm)" name="rfForm" method="post" action="" role="form">
 
 
        <!--working version of user input to variable-->
@@ -172,7 +172,7 @@
 
             <label>
                <input style="color:#555555" ng-model="zipCode" type="text"  placeholder="Zip Code" required ng-minlength="5"
-                       ng-maxlength="5">
+                       ng-maxlength="5" name="zipCode" >
                 <p>{{zipCode}}</p>
             </label>
 
@@ -201,32 +201,32 @@
 
     <!--Default buttons with dropdown menu-->
             <div class="col-xs-2">
-                <input class="form-control" ng-model="price" type="text" placeholder="Price">
+                <input class="form-control" name="price" ng-model="price" type="text" placeholder="Price">
                 <p>{{price}}</p>
             </div>
 
             <div class="col-xs-2">
-                <input class="form-control" ng-model="sqFootage" type="text" placeholder="Square Footage">
+                <input class="form-control" name="sqFootage"  ng-model="sqFootage" type="text" placeholder="Square Footage">
                 <p>{{sqFootage}}</p>
             </div>
 
             <div class="col-xs-2">
-                <input class="form-control" ng-model="acreage" type="text" placeholder="Acreage">
+                <input class="form-control" name="acreage" ng-model="acreage" type="text" placeholder="Acreage">
                 <p>{{acreage}}</p>
             </div>
 
             <div class="col-xs-2">
-                <input class="form-control" ng-model="yearBuilt" type="text" placeholder="Year Built">
+                <input class="form-control" name="yearBuilt" ng-model="yearBuilt" type="text" placeholder="Year Built">
                 <p>{{yearBuilt}}</p>
             </div>
 
             <div class="col-xs-2">
-                <input class="form-control" ng-model="neighborhood" type="text" placeholder="Neighborhood">
+                <input class="form-control" name="neighborhood" ng-model="neighborhood" type="text" placeholder="Neighborhood">
                 <p>{{neighborhood}}</p>
             </div>
 
             <div class="col-xs-2">
-                <input class="form-control" ng-model="schoolDistrict" type="text" placeholder="School District">
+                <input class="form-control" name="schoolDistrict" ng-model="schoolDistrict" type="text" placeholder="School District">
                 <p>{{schoolDistrict}}</p>
             </div>
 
