@@ -1,6 +1,7 @@
 /**
  * Created by punto on 3/12/2017.
  */
+
 var app = angular.module("NostraDomicile", ["ngRoute"]);
 
 app.controller('mainController', ['$scope', 'mainController']);

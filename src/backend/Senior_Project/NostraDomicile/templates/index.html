@@ -16,8 +16,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
     <!--this snippet is from the old file structure-->
     <!--<script src = "controllers/mainController.js"></script>-->
-   <script src = "static/mainController.js?v=0.11"></script>
+    <script type="text/javascript">
+       // var csrf_token = "{% csrf_token %}";
+    </script>
 
+   <script src = "static/mainController.js?v=0.13"></script>
   <style>
     body {
       font: 20px Montserrat, sans-serif;
@@ -93,8 +96,7 @@
     .modal-footer {
         background-color: #f9f9f9;
         text-align: left;
-    }
-      
+    }     
   </style>
 
 </head>
@@ -157,8 +159,23 @@
 <div class="container-fluid bg-5 text-center">
 
     <form ng-submit="submit(rfForm)" name="rfForm" method="post" action="" role="form">
+       {% csrf_token %}
 
-
+	   {% if status == 'True' %}
+	   <div class="alert alert-success">
+	   	<strong>Success!</strong> {{message}}
+		<br />{{zipCode}}
+		<br />{{session}}
+	   </div>
+	   {% else %}
+		{% if status == 'Fail' %}
+	   <div class="alert alert-danger">
+		<strong>Failure!</strong> {{message}}
+		<br />{{zipCode}}
+		<br />{{session}}
+	   </div>
+		{% endif %}
+	   {% endif %}
        <!--working version of user input to variable-->
 
             <h3 class="margin"> Please Enter Your Zip Code Of Interest
@@ -268,8 +285,6 @@
           </div>
     </form>
             </div>
-
-
 
   <!--<label for="usr">Please Enter Your Zip Code:</label>-->
   <!--<input type="text" class="form-control" id="usr">-->
