@@ -4,7 +4,7 @@ body {
 	color: #f5f6f7;
 }
 h2 {
-	font-size: 200%;
+	font-size: 200%; text-shadow: 2px 2px 3px black;
 }
 p {
 	font-size: 16px;
@@ -25,23 +25,28 @@ h3 .dropdown {
 	display: inline-block; 
 }
 .bg-1 {
+	border: 5px solid white;
 	background-color: #1abc9c; /* Green */
 	color: #ffffff;
 }
 .bg-2 {
+	border: 5px solid white;
 	background-color: #d3d3d3; /* Dark Blue */
 	color: #555555;
 }
 .bg-3 {
+	border: 5px solid white;
 	background-color: #ffffff; /* White */
 	color: #555555;
 }
 .bg-4 {
+	
 	background-color: #2f2f2f; /* Black Gray */
 	color: #555555;
 }
 
 .bg-5 {
+	border: 5px solid white;
 	background-color: #708090;
 	color: #555555
 }
@@ -84,6 +89,12 @@ h3 .dropdown {
 	background-color: #f9f9f9;
 	text-align: left;
 }
+div.card {
+          width: 400px;
+          height: 500px;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          text-align: center;
+      }
 
 .btn.btn-default[disabled] {
 	background-color:#00ff00;
