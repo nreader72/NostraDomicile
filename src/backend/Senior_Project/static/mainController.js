@@ -1,6 +1,6 @@
-/**
- * Created by punto on 3/12/2017.
- */
+$(document).ready(function(){
+	$('[data-toggle="popover"]').popover();
+});
 
 var app = angular.module("NostraDomicile", ["ngRoute"]);
 
@@ -11,16 +11,7 @@ var mainController = function ($scope) {
 };
 
 app.config(function($routeProvider) {
-    $routeProvider
-
-    // route for the home page
-       /* .when('/', {
-            templateUrl : 'pages/home.html',
-            controller  : 'homeController'
-        })
-*/
-        // route for the about page
-        .when('/about', {
+    $routeProvider.when('/about', {
             templateUrl : 'static/about.html',
             controller  : 'aboutController'
         })
@@ -36,12 +27,6 @@ app.config(function($routeProvider) {
             controller  : 'contactController'
         });
 });
-
-// create the controller and inject Angular's $scope
-/*app.controller('homeController', function($scope) {
-    // create a message to display in our view
-    $scope.message = 'Everyone come and see how good I look!';
-});*/
 
 app.controller('aboutController', function($scope) {
     $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +

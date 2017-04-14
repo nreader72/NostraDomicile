@@ -22,14 +22,15 @@ def test(request):
 	return HttpResponse(text)
 
 def index(request):
+	version = '0.34'
 	if request.method == 'POST':
 		status = 'True'
 		message = 'Your housing information has successfully been submitted!'
 		zipCode = 'Zip code: ' + request.POST['zipCode']
 		session = 'Session id: '
-		return render(request, 'index.html', {'status': status, 'message': message, 'zipCode': zipCode, 'session': session})
+		return render(request, 'index.html', {'version': version, 'status': status, 'message': message, 'zipCode': zipCode, 'session': session})
 	else:
-		return render(request, 'index.html')
+		return render(request, 'index.html', {'version': version})
 def rf(request):
 	text = 'hi' #classify("28205.txt")
 	return HttpResponse(text)
