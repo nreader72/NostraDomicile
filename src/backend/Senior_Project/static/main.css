@@ -55,6 +55,7 @@ h3 .dropdown {
 	padding-bottom: 70px;
 }
 .navbar {
+	box-shadow: 5px 5px grey;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	border: 0;
