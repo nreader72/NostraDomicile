@@ -25,11 +25,15 @@ app.config(function($routeProvider) {
         .when('/contact', {
             templateUrl : 'static/contact.html',
             controller  : 'contactController'
+        })
+	.when('/help', {
+            templateUrl : 'pages/help.html',
+            controller  : 'helpController'
         });
 });
 
 app.controller('aboutController', function($scope) {
-    $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
+   /* $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
         'are to predict whether a house will sell in a specific area based on the home’s attributes, and given a zip ' +
         'code, what are the most important factors leading to a sale in that area.'  +
         ' \n\n ' +
@@ -37,17 +41,20 @@ app.controller('aboutController', function($scope) {
         ' goal by retrieving and storing housing market information using a Zillow API and MySQL database, using ' +
         'machine learning to evaluate housing data and determine factors influencing home sales in a particular area,' +
         ' and creating a user-friendly interface for users to view data about factors influencing home sales and ' +
-        'create data visualizations about houses on the market based on user preferences';
+        'create data visualizations about houses on the market based on user preferences';*/
 });
 
 app.controller('contactController', function($scope) {
-    $scope.message = 'BLAH BLAH BLAH BLAH BLAH EMAIL FORM BLAH BLAH BLAH';
+    //$scope.message = 'BLAH BLAH BLAH BLAH BLAH EMAIL FORM BLAH BLAH BLAH';
 });
 
 app.controller('blogController', function($scope) {
     $scope.message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, ';
 });
 
+app.controller('helpController', function($scope) {
+    //$scope.message = 'BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG';
+});
 
 
 app.controller('selectboxCtrl', function ($scope) {
