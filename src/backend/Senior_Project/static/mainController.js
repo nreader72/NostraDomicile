@@ -27,7 +27,7 @@ app.config(function($routeProvider) {
             controller  : 'contactController'
         })
 	.when('/help', {
-            templateUrl : 'pages/help.html',
+            templateUrl : 'static/help.html',
             controller  : 'helpController'
         });
 });
