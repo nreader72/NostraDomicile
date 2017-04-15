@@ -1,0 +1,104 @@
+street_address,zip,city,state,home_type,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,year_updated,number_of_floors,neighborhood,school_district,sold_binary,last_sold_date,last_sale_price,roof_type,price_range
+"1001 Woodside Ave",28205,Charlotte,NC,SingleFamily,3,2,1368,6534,1947,2014,1,None,None,0,03/09/2015,270000,Other,54
+"1015 Anderson St",28205,Charlotte,NC,SingleFamily,2,1,953,5183,1948,2005,1,None,None,0,06/03/2015,189000,Other,37
+"1015 Lunsford Pl",28205,Charlotte,NC,SingleFamily,3,1,1230,13503,1947,1965,1,None,None,1,09/07/2016,190000,Asphalt,38
+"1020 Lunsford Pl",28205,Charlotte,NC,SingleFamily,3,3,1800,21780,2015,2015,2,None,None,0,09/30/2015,365000,Asphalt,73
+"1108 E 34th St",28205,Charlotte,NC,SingleFamily,3,2,2000,14374,1938,1965,2,None,None,0,08/13/2014,335000,Asphalt,67
+"1116 Academy St",28205,Charlotte,NC,SingleFamily,4,3,2456,4791,1945,2005,2,None,None,1,04/08/2016,302000,"Shake / Shingle",60
+"1124 Meadow Ln",28205,Charlotte,NC,SingleFamily,3,2,1105,9583,1948,1965,1,None,None,1,12/30/2016,283500,Asphalt,56
+"1162 Brighton Pl",28205,Charlotte,NC,SingleFamily,2,1,1030,12197,1953,1970,1,None,None,0,05/27/2015,90000,Asphalt,18
+"1211 Seigle Ave",28205,Charlotte,NC,SingleFamily,2,1,1162,5575,1921,1965,1,None,None,0,12/18/2006,88000,Asphalt,17
+"1222 Rollins Ave",28205,Charlotte,NC,SingleFamily,3,2,1310,12632,1948,2000,1,None,None,1,09/29/2016,300000,"Asphalt, Other",60
+"1233 Roanoke Ave",28205,Charlotte,NC,SingleFamily,3,2,1250,10019,1953,1970,1,None,None,1,07/27/2016,292000,Asphalt,58
+"1234 E 35th St",28205,Charlotte,NC,SingleFamily,4,3,2483,15246,1930,2000,2,None,None,0,04/08/2015,380000,Other,76
+"1324 Goodwin Ave",28205,Charlotte,NC,SingleFamily,3,2,1968,16552,1940,2012,1,None,None,0,03/19/2015,335000,Asphalt,67
+"1325 Kennon St",28205,Charlotte,NC,SingleFamily,3,3,1873,7405,2015,2016,1,None,None,1,10/11/2016,368000,"Shake / Shingle, Other",73
+"1416 Thomas Ave",28205,Charlotte,NC,SingleFamily,3,2,1536,7405,1929,1970,1,None,None,0,12/15/2015,450000,"Shake / Shingle",90
+"1424 Nandina St",28205,Charlotte,NC,SingleFamily,3,2,1500,7840,1948,2006,1,None,None,0,03/27/2014,330000,Other,66
+"1425 Shamrock Dr",28205,Charlotte,NC,SingleFamily,3,1,1517,5227,1946,1965,1,None,None,1,03/31/2016,316500,"Shake / Shingle",63
+"1434 Morningside Dr",28205,Charlotte,NC,SingleFamily,3,2,1915,10890,1948,2014,1,None,None,0,04/16/2015,425000,"Shake / Shingle",85
+"1439 Woodland Dr",28205,Charlotte,NC,SingleFamily,3,2,2364,15245,1940,2003,2,None,None,1,08/12/2016,360000,"Asphalt, Shake / Shingle",72
+"1500 Parkwood Ave",28205,Charlotte,NC,SingleFamily,3,2,1538,10977,1935,2016,1,None,None,1,01/12/2017,315000,Other,63
+"1511 Seigle Ave",28205,Charlotte,NC,SingleFamily,3,2,1550,7318,1915,2007,1,None,None,1,07/11/2016,285000,Asphalt,57
+"1514 Mimosa Ave",28205,Charlotte,NC,SingleFamily,3,2,1632,15245,1930,2000,1,None,None,1,08/31/2016,440000,Asphalt,88
+"1521 Richland Dr",28205,Charlotte,NC,SingleFamily,3,1,1152,19471,1941,2009,2,None,None,0,11/23/2015,147000,Asphalt,29
+"1604 Harrill St",28205,Charlotte,NC,SingleFamily,3,2,1204,7405,1997,2015,1,None,None,1,03/23/2016,100000,Asphalt,20
+"1605 Allen St",28205,Charlotte,NC,SingleFamily,3,2,1305,7100,1905,2013,1,Belmont,None,1,02/29/2016,265000,Asphalt,53
+"1612 Pegram St",28205,Charlotte,NC,SingleFamily,2,2,1200,5663,1932,2014,1,Belmont,None,0,03/13/2015,100000,"Shake / Shingle",20
+"1614 Belvedere Ave",28205,Charlotte,NC,SingleFamily,3,2,1441,4878,1942,1975,1,None,None,1,11/17/2016,346500,Other,69
+"1617 Brook Rd",28205,Charlotte,NC,SingleFamily,5,4,2470,14374,1949,2007,2,Midwood,"Charlotte Mecklenburg",0,06/26/2015,435000,Other,87
+"1620 Club Rd",28205,Charlotte,NC,SingleFamily,4,3,1650,6098,1931,2016,2,None,None,1,11/17/2016,400000,Asphalt,80
+"1628 Cromwell Ct",28205,Charlotte,NC,SingleFamily,3,2,1654,15246,1954,1965,1,None,None,1,08/01/2016,304999,"Shake / Shingle, Other",60
+"1638 Chatham Ave",28205,Charlotte,NC,SingleFamily,3,2,1296,15246,1949,2017,1,None,None,0,04/11/1997,57000,"Asphalt, Composition, Other",11
+"1638 Longfellow St",28205,Charlotte,NC,SingleFamily,3,2,1396,19602,1920,2008,1,"Merry Oaks",None,1,11/07/2016,289000,Asphalt,57
+"1700 Dearmon Dr",28205,Charlotte,NC,SingleFamily,2,3,1423,11761,1950,2014,1,None,None,1,04/11/2016,325000,Asphalt,65
+"1704 Pecan Ave",28205,Charlotte,NC,SingleFamily,2,2,1254,6534,1940,2012,1,None,None,0,06/10/2014,258000,"Asphalt, Shake / Shingle",51
+"1711 Club Rd APT 7",28205,Charlotte,NC,Condominium,1,1,684,12327,1941,1955,1,None,None,0,05/12/2015,125000,Asphalt,25
+"1712 Woodland Dr",28205,Charlotte,NC,SingleFamily,3,2,1300,9147,1954,1970,1,"Eastway Park",None,1,11/01/2016,272000,Asphalt,54
+"1715 Matheson Ave",28205,Charlotte,NC,SingleFamily,4,3,1850,7318,1951,2006,2,None,None,0,04/24/2015,302000,"Shake / Shingle",60
+"1808 Mecklenburg Ave",28205,Charlotte,NC,SingleFamily,3,2,1440,9148,1948,1975,1,None,None,0,10/07/2015,360000,Asphalt,72
+"1815 Belvedere Ave",28205,Charlotte,NC,SingleFamily,3,2,2142,9583,1925,2006,2,None,None,1,06/16/2016,555000,Asphalt,111
+"1815 Seigle Ave",28205,Charlotte,NC,SingleFamily,5,3,2305,7405,1910,2013,2,"Phifer Heights / Villa Heights",None,1,10/06/2016,444500,Asphalt,88
+"1908 Dearmon Dr",28205,Charlotte,NC,SingleFamily,3,3,1704,5227,1998,2014,2,None,None,1,03/18/2016,337500,"Shake / Shingle",67
+"1911 Club Rd",28205,Charlotte,NC,SingleFamily,3,2,1390,7448,1964,2006,1,None,None,1,05/12/2016,376000,"Shake / Shingle",75
+"1919 Nassau Blvd",28205,Charlotte,NC,SingleFamily,2,1,850,7500,1949,1998,1,None,None,1,09/29/2016,276000,"Shake / Shingle",55
+"1924 Allen St",28205,Charlotte,NC,SingleFamily,3,3,2470,7405,2016,2016,2,None,None,1,08/11/2016,463000,Asphalt,92
+"1930 Truman Rd",28205,Charlotte,NC,SingleFamily,3,2,1678,7405,1992,2008,2,"Plaza Midwood - Charlotte, NC","Charlotte Mecklenburg Schools",0,06/24/2014,377000,Asphalt,75
+"1936 Marguerite Ave",28205,Charlotte,NC,SingleFamily,4,3,2300,9453,1946,2009,1,None,None,0,04/21/2014,373000,Asphalt,74
+"2009 Chatham Ave",28205,Charlotte,NC,SingleFamily,3,2,1542,6969,1941,2005,2,None,None,0,10/29/2015,371500,Asphalt,74
+"2011 Club Rd",28205,Charlotte,NC,SingleFamily,2,1,1233,6969,1941,1980,1,None,None,0,05/14/2015,307000,"Asphalt, Other",61
+"2013 Midwood Pl",28205,Charlotte,NC,SingleFamily,3,2,1525,7840,1941,2010,1,None,None,0,07/30/2015,387000,Other,77
+"2015 Chesterfield Ave",28205,Charlotte,NC,SingleFamily,2,1,1122,7405,1940,1975,1,None,None,1,08/10/2016,337000,Asphalt,67
+"2133 Thurmond Pl",28205,Charlotte,NC,SingleFamily,2,2,972,8537,1947,2007,1,None,None,1,07/21/2016,285500,Composition,57
+"2201 Commonwealth Ave",28205,Charlotte,NC,SingleFamily,4,2,1941,7405,1924,1955,2,None,None,0,05/19/2015,375000,"Asphalt, Other",75
+"2221 Commonwealth Ave",28205,Charlotte,NC,SingleFamily,3,1,1409,7405,1940,1970,1,None,None,1,03/01/2016,315000,Asphalt,63
+"2225 Lanier Ave",28205,Charlotte,NC,SingleFamily,3,2,1179,9147,1957,1965,1,None,None,1,01/25/2017,185000,Asphalt,37
+"2225 Winter St",28205,Charlotte,NC,SingleFamily,3,1,1547,13503,1950,1975,1,None,None,0,07/31/2015,340000,Asphalt,68
+"2233 Chambwood Dr",28205,Charlotte,NC,SingleFamily,2,1,1058,7405,1939,1975,1,None,None,1,07/21/2016,292500,Asphalt,58
+"2234 Pinckney Ave",28205,Charlotte,NC,SingleFamily,3,2,1378,9147,1948,2010,1,None,None,0,12/29/2015,309900,Asphalt,61
+"2309 Lynhaven St",28205,Charlotte,NC,SingleFamily,4,3,2003,9583,1947,1975,1,None,None,1,09/07/2016,462000,Asphalt,92
+"2337 Commonwealth Ave",28205,Charlotte,NC,SingleFamily,4,3,2172,7405,1946,2008,1,Commonwealth-Morningside,"Charlotte Mecklenburg",1,11/15/2016,465000,Asphalt,93
+"2405 Chesterfield Ave",28205,Charlotte,NC,SingleFamily,3,2,1474,31363,1946,1975,1,None,None,1,09/13/2016,338000,Asphalt,67
+"2424 Chesterfield Ave",28205,Charlotte,NC,SingleFamily,4,3,2350,7405,1946,2006,2,None,None,0,01/05/2015,487500,Asphalt,97
+"2515 Belvedere Ave",28205,Charlotte,NC,SingleFamily,3,2,2390,7623,1940,1985,2,None,None,1,12/07/2016,569000,Asphalt,113
+"2534 Bay St",28205,Charlotte,NC,SingleFamily,3,3,1678,8319,1946,2006,2,None,None,0,02/09/2015,359000,"Shake / Shingle",71
+"2610 Springway Dr",28205,Charlotte,NC,SingleFamily,3,1,988,12632,1961,1965,1,None,None,0,07/14/2015,150000,Asphalt,30
+"2628 Chesterfield Ave",28205,Charlotte,NC,SingleFamily,4,4,3200,8276,1950,2016,2,None,None,1,05/12/2016,315500,Asphalt,63
+"2632 Commonwealth Ave",28205,Charlotte,NC,SingleFamily,2,2,1014,7840,1940,1970,1,Commonwealth,None,1,04/01/2016,275000,Asphalt,55
+"2634 Duncan Ave",28205,Charlotte,NC,SingleFamily,3,2,1500,11499,1946,2008,1,None,None,1,04/29/2016,322000,Asphalt,64
+"2808 Virginia Ave",28205,Charlotte,NC,SingleFamily,3,2,2000,9234,1949,2008,1,None,None,0,09/26/2014,332000,Asphalt,66
+"2819 N Alexander St",28205,Charlotte,NC,SingleFamily,3,2,1648,11761,1900,2006,1,None,None,0,04/24/2015,330000,"Shake / Shingle",66
+"2822 Shamrock Dr",28205,Charlotte,NC,SingleFamily,3,1,967,8712,1960,1965,1,None,None,0,06/19/2015,138500,Other,27
+"2830 Hilliard Dr",28205,Charlotte,NC,SingleFamily,3,2,1098,10018,1951,2014,1,None,None,0,04/24/2015,220000,"Shake / Shingle",44
+"2909 Clemson Ave",28205,Charlotte,NC,SingleFamily,4,3,1908,8712,1947,1970,1,"Villa Heights",None,1,01/05/2017,399500,Asphalt,79
+"2947 Enfield Rd",28205,Charlotte,NC,SingleFamily,2,1,1000,9583,1954,1970,1,None,None,0,03/18/2015,85000,Asphalt,17
+"3004 Holt St",28205,Charlotte,NC,SingleFamily,3,2,1855,6534,1946,2016,1,None,None,1,04/29/2016,410000,Asphalt,82
+"3021 Attaberry Dr",28205,Charlotte,NC,Apartment,3,2,1236,7405,1955,1965,1,None,None,1,03/18/2016,285000,"Asphalt, Shake / Shingle",57
+"3021 N Mcdowell St",28205,Charlotte,NC,SingleFamily,3,2,1950,7884,1960,2006,1,None,None,1,06/10/2016,450000,Asphalt,90
+"3029 Clemson Ave",28205,Charlotte,NC,SingleFamily,4,3,2464,7840,1939,2015,2,None,None,0,10/11/2015,470000,Other,94
+"3108 Airlie St",28205,Charlotte,NC,SingleFamily,3,2,1970,4704480,1953,1971,1,None,None,1,05/31/2016,335000,Asphalt,67
+"3108 Libeth St",28205,Charlotte,NC,SingleFamily,3,2,1569,10890,1954,2016,1,None,None,1,04/28/2016,300000,Asphalt,60
+"3123 Country Club Dr",28205,Charlotte,NC,SingleFamily,3,3,2271,17424,1948,2005,1,None,None,0,05/18/2015,440000,Asphalt,88
+"3127 Barnhill Dr",28205,Charlotte,NC,SingleFamily,2,2,1453,9583,1951,2016,1,None,None,1,06/13/2016,298000,Asphalt,59
+"3127 Dunaire Dr",28205,Charlotte,NC,SingleFamily,3,2,1484,8712,1958,2015,1,None,None,0,05/01/2015,145000,Asphalt,29
+"3207 Cosby Pl",28205,Charlotte,NC,SingleFamily,2,2,926,12806,1947,1999,1,None,None,0,04/29/2014,77000,Asphalt,15
+"3315 Erskine Dr",28205,Charlotte,NC,Miscellaneous,2,1,783,200,1965,2009,1,None,None,1,08/05/2016,31000,Asphalt,6
+"3320 Spencer St",28205,Charlotte,NC,SingleFamily,3,3,2236,11761,2007,2007,1,None,None,1,12/28/2016,427000,"Shake / Shingle",85
+"3415 Commonwealth Ave",28205,Charlotte,NC,SingleFamily,3,2,1738,13503,1938,2012,1,"Commonwealth Park",Charlotte-Mecklenburg,0,05/29/2015,277000,"Shake / Shingle",55
+"3420 Hayes Ct",28205,Charlotte,NC,SingleFamily,3,2,1444,8712,1954,2016,1,None,None,1,08/09/2016,270000,Asphalt,54
+"3451 Airlie St",28205,Charlotte,NC,SingleFamily,2,2,1790,8712,1952,2013,1,None,None,1,01/03/2017,340000,Metal,68
+"3518 Commonwealth Ave",28205,Charlotte,NC,SingleFamily,4,3,2601,20909,1940,2017,2,None,None,0,07/26/1993,70000,Asphalt,14
+"3529 Commonwealth Ave",28205,Charlotte,NC,SingleFamily,3,2,1325,12196,1939,2004,1,"Commonwealth Park",Mecklenburg,1,07/30/2016,318500,Asphalt,63
+"3580 N Davidson St",28205,Charlotte,NC,Townhouse,2,3,1450,67692,2004,2015,3,"North Charlotte, NoDa Arts District","Charlotte Mecklenburg Schools",0,11/16/2007,191000,"Asphalt, Other",38
+"3914 Admiral Ave",28205,Charlotte,NC,SingleFamily,2,1,900,14374,1948,1965,1,None,None,1,08/05/2016,130000,Other,26
+"4006 Howie Cir",28205,Charlotte,NC,SingleFamily,2,1,1136,11282,1955,1985,1,None,None,1,04/29/2016,83000,Asphalt,16
+"4029 Winfield Dr",28205,Charlotte,NC,SingleFamily,3,2,1518,15682,1957,1970,1,None,None,0,05/21/2015,110000,Composition,22
+"4211 Winfield Dr",28205,Charlotte,NC,SingleFamily,3,1,1000,9147,1955,2015,1,None,None,0,07/17/2015,147000,"Shake / Shingle",29
+"4401 Hancock Ter",28205,Charlotte,NC,SingleFamily,3,2,1361,13939,1968,2014,1,None,None,0,07/14/2014,130000,Asphalt,26
+"4409 Ivanhoe Pl",28205,Charlotte,NC,SingleFamily,3,2,1375,10890,1967,2014,1,None,None,0,12/22/2014,50000,Asphalt,10
+"4514 Holbrook Dr",28205,Charlotte,NC,SingleFamily,3,1,1019,12196,1957,1975,1,None,None,1,01/18/2017,143000,Asphalt,28
+"4816 Crestmont Dr",28205,Charlotte,NC,SingleFamily,3,2,1250,9583,1967,2015,1,None,None,0,07/20/2015,149000,Other,29
+"5221 Greenbrook Dr",28205,Charlotte,NC,SingleFamily,3,2,1170,11282,1961,2008,1,None,None,0,10/02/2014,128000,Asphalt,25
+"632 Crater St",28205,Charlotte,NC,SingleFamily,3,2,1171,8276,1961,1965,1,None,None,0,04/14/2015,115000,"Asphalt, Other",23
+"908 Parkwood Ave",28205,Charlotte,NC,SingleFamily,3,2,1098,5710,1928,1965,1,None,None,0,05/05/2014,119500,"Asphalt, Shake / Shingle",23
+"922 Herrin Ave",28205,Charlotte,NC,SingleFamily,4,3,3049,10454,1961,2014,2,None,None,1,04/08/2016,505000,"Asphalt, Shake / Shingle",101

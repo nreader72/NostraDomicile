@@ -1,115 +1,21 @@
-<!-- contact.html -->
+<!-- www.123contactform.com script begins here -->
 <style>
     .bg-2 {
-        background-color: #555555; /* Dark Blue */
+        background-color: #ffffff; /* Dark Blue */
         color: #555555;
     }
 
 </style>
-
-
 <div class="jumbotron text-center">
     <h2 style="color:black">Contact NostraDomicile</h2>
 
     <div class="vertical-middle">
 
         <div class="container-fluid bg-2 text-center">
-
-            <div style="color:#1abc9c" class="panel panel-default">
-
-                <div style="color: #1abc9c" class="panel-heading">
-
-                    <h2 class="panel-title"></h2>
-
-                </div>
-
-                <div ng-controller="ContactController" class="panel-body">
-
-                    <form ng-submit="submit(contactform)" name="contactform" method="post" action=""
-                          class="form-horizontal" role="form">
-
-                        <div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
-
-                            <label for="inputName" class="col-lg-2 control-label">Name</label>
-
-                            <div class="col-lg-10">
-
-                                <input ng-model="formData.inputName" type="text" class="form-control" id="inputName"
-                                       name="inputName" placeholder="Your Name" required>
-
-                            </div>
-
-                        </div>
-
-                        <div class="form-group"
-                             ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
-
-                            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-
-                            <div class="col-lg-10">
-
-                                <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail"
-                                       name="inputEmail" placeholder="Your Email" required>
-
-                            </div>
-
-                        </div>
-
-                        <div class="form-group"
-                             ng-class="{ 'has-error': contactform.inputSubject.$invalid && submitted }">
-
-                            <label for="inputSubject" class="col-lg-2 control-label">Subject</label>
-
-                            <div class="col-lg-10">
-
-                                <input ng-model="formData.inputSubject" type="text" class="form-control"
-                                       id="inputSubject" name="inputSubject" placeholder="Subject Message" required>
-
-                            </div>
-
-                        </div>
-
-                        <div class="form-group"
-                             ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">
-
-                            <label for="inputMessage" class="col-lg-2 control-label">Message</label>
-
-                            <div class="col-lg-10">
-
-                                <textarea ng-model="formData.inputMessage" class="form-control" rows="4"
-                                          id="inputMessage" name="inputMessage" placeholder="Your message..."
-                                          required></textarea>
-
-                            </div>
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <div class="col-lg-offset-2 col-lg-10">
-
-                                <button type="submit" class="btn btn-primary" ng-disabled="submitButtonDisabled">
-
-                                    Send Message
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </form>
-
-                    <p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
+<script type="text/javascript" defer src="//www.123contactform.com/embed/2616460.js" data-role="form"></script>
+<p>Powered by <a class="footerLink13" title="123ContactForm" href="http://www.123contactform.com">123ContactForm</a> | <a style="font-size:small!important;color:#000000!important; text-decoration:underline!important;" title="Looks like phishing? Report it!"
+         href="http://www.123contactform.com/sfnew.php?s=123contactform-52&control119314=http:///contact-form--2616460.html&control190=Report%20abuse"
+         rel="nofollow">Report abuse</a></p><!-- www.123contactform.com script ends here -->
+ </div>
     </div>
-
-
-    <p>{{ message }}</p>
 </div>

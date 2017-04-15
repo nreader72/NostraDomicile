@@ -1,6 +1,7 @@
-/**
- * Created by punto on 3/12/2017.
- */
+$(document).ready(function(){
+	$('[data-toggle="popover"]').popover();
+});
+
 var app = angular.module("NostraDomicile", ["ngRoute"]);
 
 app.controller('mainController', ['$scope', 'mainController']);
@@ -10,16 +11,7 @@ var mainController = function ($scope) {
 };
 
 app.config(function($routeProvider) {
-    $routeProvider
-
-    // route for the home page
-       /* .when('/', {
-            templateUrl : 'pages/home.html',
-            controller  : 'homeController'
-        })
-*/
-        // route for the about page
-        .when('/about', {
+    $routeProvider.when('/about', {
             templateUrl : 'static/about.html',
             controller  : 'aboutController'
         })
@@ -33,17 +25,15 @@ app.config(function($routeProvider) {
         .when('/contact', {
             templateUrl : 'static/contact.html',
             controller  : 'contactController'
+        })
+	.when('/help', {
+            templateUrl : 'static/help.html',
+            controller  : 'helpController'
         });
 });
 
-// create the controller and inject Angular's $scope
-/*app.controller('homeController', function($scope) {
-    // create a message to display in our view
-    $scope.message = 'Everyone come and see how good I look!';
-});*/
-
 app.controller('aboutController', function($scope) {
-    $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
+   /* $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
         'are to predict whether a house will sell in a specific area based on the home’s attributes, and given a zip ' +
         'code, what are the most important factors leading to a sale in that area.'  +
         ' \n\n ' +
@@ -51,32 +41,44 @@ app.controller('aboutController', function($scope) {
         ' goal by retrieving and storing housing market information using a Zillow API and MySQL database, using ' +
         'machine learning to evaluate housing data and determine factors influencing home sales in a particular area,' +
         ' and creating a user-friendly interface for users to view data about factors influencing home sales and ' +
-        'create data visualizations about houses on the market based on user preferences';
+        'create data visualizations about houses on the market based on user preferences';*/
 });
 
 app.controller('contactController', function($scope) {
-    $scope.message = 'BLAH BLAH BLAH BLAH BLAH EMAIL FORM BLAH BLAH BLAH';
+    //$scope.message = 'BLAH BLAH BLAH BLAH BLAH EMAIL FORM BLAH BLAH BLAH';
 });
 
 app.controller('blogController', function($scope) {
     $scope.message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, ';
 });
 
+app.controller('helpController', function($scope) {
+    //$scope.message = 'BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG';
+});
 
 
 app.controller('selectboxCtrl', function ($scope) {
-    $scope.BedroomList = [{
-        "bedroom": 6
+    $scope.bedrooms = [{
+	value: '0',
+	text: 'Bedrooms'
     }, {
-        "bedroom": 5
+        value: '1',
+	text:'1'
     }, {
-        "bedroom": 4
+        value: '2',
+	text: '2'
     }, {
-        "bedroom": 3
+       	value: '3',
+	text: '3'
     }, {
-        "bedroom": 2
+       	value: '4',
+	text: '4'
     }, {
-        "bedroom": 1
+        value: '5',
+	text: '5'
+    }, {
+        value: '6',
+	text: '6'
     }];
     $scope.checkselection = function () {
         if ($scope.userSelect1 != "" && $scope.userSelect1 != undefined)
@@ -84,82 +86,153 @@ app.controller('selectboxCtrl', function ($scope) {
         else
             $scope.msg = 'Please Select Dropdown Value';
     };
-    $scope.BathroomList = [{
-        bathroom: '6'
+    $scope.bathrooms = [{
+       	value: '0',
+	text: 'Bathrooms'
     }, {
-        "bathroom": '5.5'
+	value: '1',
+	text: '1'
     }, {
-        'bathroom': "5"
+        value: '2',
+	text: '1.5'
     }, {
-        "bathroom": 4.5
+	value: '3',
+        text: '2'
     }, {
-        "bathroom": 4
+	value: '4',
+        text: '2.5'
     }, {
-        "bathroom": 3.5
+        value: '5',
+	text: '3'
     }, {
-        "bathroom": 3
+        value: '6',
+	text: '3.5'
     }, {
-        "bathroom": 2.5
+        value: '7',
+	text: '4'
     }, {
-        "bathroom": 2
+        value: '8',
+	text: '4.5'
     }, {
-        "bathroom": 1.5
+        value: '9',
+	text: '5'
     }, {
-        "bathroom": 1
+        value: '10',
+	text: '5.5'
+    }, {
+        value: '11',
+	text: '6'
     }];
+
     $scope.checkselection = function () {
-        if ($scope.userSelect2 != "" && $scope.userSelect2 != undefined)
-            $scope.msg = 'Selected Value: ' + $scope.userSelect2;
+        if ($scope.userselect2 != "" && $scope.userSelect2 != undefined)
+                $scope.msg = 'Selected Value: ' + $scope.userSelect2;
+        else 
+                $scope.msg = 'Please Select a Dropdown Value';
+    };
+
+    $scope.stories = [{
+	value: '0',
+	text: 'Story'
+    }, {
+	value: '1',
+	text: '1'
+    }, {
+	value: '2',
+	text: '2'
+    }, {
+	value: '3',
+	text:  '3'
+    }, {
+	value: '4',
+	text: '4'
+    }];
+
+    $scope.checkselection = function () {
+        if ($scope.userSelect3 != "" && $scope.userSelect3 != undefined)
+            $scope.msg = 'Selected Value: ' + $scope.userSelect3;
         else
             $scope.msg = 'Please Select Dropdown Value';
     };
 
     $scope.TypeList = [{
-        "type": "Unknown"
+	value: '0',
+	text: 'Type'
     }, {
-        "type": "SingleFamily"
+        value: '1',
+	text: 'Unknown'
     }, {
-        "type": "Duplex"
+	value: '2',
+        text: 'SingleFamily'
     }, {
-        "type": "Triplex"
+	value: '3',
+        text: 'Duplex'
     }, {
-        "type": "Quadruplex"
+	value: '4',
+        text: 'Triplex'
     }, {
-        "type": "Condominium"
+	value: '5',
+        text: 'Quadruplex'
     }, {
-        "type":  "Cooperative"
+	value: '6',
+        text: 'Condominium'
     }, {
-        "type": "Mobile"
+	value: '7',
+        text: 'Cooperative'
     }, {
-        "type": "MultiFamily2To4"
+	value: '8',
+        text: 'Mobile'
     }, {
-        "type": "MultiFamily5Plus"
+	value: '9',
+        text: 'MultiFamily2To4'
     }, {
-        "type": "Timeshare"
+	value: '10',
+        text: 'MultiFamily5Plus'
     }, {
-        "type": "Miscellaneous"
+	value: '11',
+        text: 'Timeshare'
+    }, {
+	value: '12',
+        text: 'Miscellaneous'
     },{
-        "type": "VacantResidentialLand"
+	value: '13',
+        text: 'VacantResidentialLand'
     }];
     $scope.checkselection = function () {
-        if ($scope.userSelect2 != "" && $scope.userSelect2 != undefined)
-            $scope.msg = 'Selected Value: ' + $scope.userSelect2;
+        if ($scope.userSelect4 != "" && $scope.userSelect4 != undefined)
+            $scope.msg = 'Selected Value: ' + $scope.userSelect4;
         else
             $scope.msg = 'Please Select Dropdown Value';
     };
 
     $scope.ParkingList = [{
-        "parking": "Garage-Attached"
+	value: '0',
+	text: 'Parking'
     }, {
-        "parking": "Carport"
+	value: '1',
+        text: 'Garage-Attached'
     }, {
-        "parking": "Off-street"
+	value: '2',
+        text: 'Carport'
     }, {
-        "parking": "Garage-Detached"
+	value: '3',
+        text: 'Off-street'
     }, {
-        "parking": "None"
+	value: '4',
+        text: 'Garage-Detached'
+    }, {
+	value: '5',
+       	text: 'None'
 
     }];
+
+    $scope.checkselection = function () {
+        if ($scope.userselect5 != "" && $scope.userSelect5 != undefined)
+                $scope.msg = 'Selected Value: ' + $scope.userSelect5;
+        else 
+                $scope.msg = 'Please Select a Dropdown Value';
+    };
+
 	//
 
     $scope.result = 'hidden'

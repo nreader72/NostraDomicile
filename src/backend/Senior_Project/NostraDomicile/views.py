@@ -2,6 +2,7 @@ import mysql.connector
 from django.http import HttpResponse
 from django.shortcuts import render
 from NostraDomicile.models import HomeData
+#from rfLoad import Classify
 
 def test(request):
 	db = mysql.connector.connect(user='ctsimaan', password='SeniorProject490', host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com', database='PyZillow_Data')
@@ -21,4 +22,15 @@ def test(request):
 	return HttpResponse(text)
 
 def index(request):
-	return render(request, 'index.html')
+	version = '0.34'
+	if request.method == 'POST':
+		status = 'True'
+		message = 'Your housing information has successfully been submitted!'
+		zipCode = 'Zip code: ' + request.POST['zipCode']
+		session = 'Session id: '
+		return render(request, 'index.html', {'version': version, 'status': status, 'message': message, 'zipCode': zipCode, 'session': session})
+	else:
+		return render(request, 'index.html', {'version': version})
+def rf(request):
+	text = 'hi' #classify("28205.txt")
+	return HttpResponse(text)
