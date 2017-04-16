@@ -1,4 +1,9 @@
+#import mysql
 import mysql.connector
+import json
+#import pandas as pd
+#import numpy as np
+#import plotly.tools as tls
 from django.http import HttpResponse
 from django.shortcuts import render
 from NostraDomicile.models import HomeData
@@ -22,13 +27,18 @@ def test(request):
 	return HttpResponse(text)
 
 def index(request):
-	version = '0.34'
+	version = '0.78'
 	if request.method == 'POST':
-		status = 'True'
-		message = 'Your housing information has successfully been submitted!'
-		zipCode = 'Zip code: ' + request.POST['zipCode']
-		session = 'Session id: '
-		return render(request, 'index.html', {'version': version, 'status': status, 'message': message, 'zipCode': zipCode, 'session': session})
+		response_data = {}
+		response_data['status'] = 'True'
+		response_data['zip'] = 'True'
+		response_data['factors'] = 'False'
+		response_data['message'] = 'Your housing information has successfully been submitted!'
+		response_data['zipCode'] = request.POST['zipCode']
+		response_data['session'] = '???'
+		
+		#return render(request, 'index.html', {'version': version, 'status': status, 'message': message, 'zipCode': zipCode, 'session': session})
+		return HttpResponse(json.dumps(response_data), content_type="application/json")
 	else:
 		return render(request, 'index.html', {'version': version})
 def rf(request):
