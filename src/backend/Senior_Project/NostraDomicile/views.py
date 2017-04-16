@@ -1,8 +1,8 @@
 #import mysql
 import mysql.connector
 import json
-#import pandas as pd
-#import numpy as np
+import pandas as pd
+import numpy as np
 #import plotly.tools as tls
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -27,7 +27,7 @@ def test(request):
 	return HttpResponse(text)
 
 def index(request):
-	version = '0.78'
+	version = '0.79'
 	if request.method == 'POST':
 		response_data = {}
 		response_data['status'] = 'True'
