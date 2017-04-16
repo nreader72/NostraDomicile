@@ -33,15 +33,14 @@ app.config(function($routeProvider) {
 });
 
 app.controller('aboutController', function($scope) {
-   /* $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
+    $scope.message1 = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
         'are to predict whether a house will sell in a specific area based on the home’s attributes, and given a zip ' +
-        'code, what are the most important factors leading to a sale in that area.'  +
-        ' \n\n ' +
-        '\nNostraDomicile will accomplish this' +
+        'code, what are the most important factors leading to a sale in that area.;
+     $scope.message2 =   'NostraDomicile will accomplish this' +
         ' goal by retrieving and storing housing market information using a Zillow API and MySQL database, using ' +
         'machine learning to evaluate housing data and determine factors influencing home sales in a particular area,' +
         ' and creating a user-friendly interface for users to view data about factors influencing home sales and ' +
-        'create data visualizations about houses on the market based on user preferences';*/
+        'create data visualizations about houses on the market based on user preferences';
 });
 
 app.controller('contactController', function($scope) {
@@ -53,7 +52,11 @@ app.controller('blogController', function($scope) {
 });
 
 app.controller('helpController', function($scope) {
-    //$scope.message = 'BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG';
+    $scope.message1 = 'NostraDomicile offers three primary functions: "Will Your House Sell?", "Most Important Attributes", and "Data Visualizations".'
+	+ 'In order to fulfill the goal of these functions some input is needed.  For the "Will Your House Sell?" function both the Zip Code' +
+	    'and your home''s attributes are required.  For the other two functions only the Zip Code of interest is required.';
+    $scope.message2 = 'The submit buttons for the primary functions will not work until the proper input has been entered.';
+    $scope.message3 = 'Thank you for using NostraDomicile, if you have any questions or concerns feel free to email us through the Contact Us Section.';
 });
 
 
