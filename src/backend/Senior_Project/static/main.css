@@ -95,11 +95,20 @@ div.card {
           height: 500px;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           text-align: center;
-      }
-
-.btn.btn-default[disabled] {
-	background-color:#00ff00;
+}
+.btn-disabled {
+	background-color:rgb(139,0,0);
 }     
+.btn-disabled:hover {
+	background-color:rgb(170,0,0);
+}
+.btn-disabled:clicked {
+	background-color:rgb(155,0,0);
+}
+.btn-disabled:active, .btn-disabled:focus, .btn-disable.active, .btn-disabled.open .dropdown-toggle.btn-disabled, .btn-disabled:focus:hover {
+	background-color:rgb(139,0,0);
+}
+
 span.icon {
 	font-size:10px;
 	color:black;

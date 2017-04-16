@@ -1,5 +1,65 @@
 $(document).ready(function(){
 	$('[data-toggle="popover"]').popover();
+
+	$('#rf').on('submit', function(event) {
+		event.preventDefault();
+		submit_post();
+	});
+
+	function submit_post() {
+		form_data = {};
+		form_data['zipCode'] = $('#zip').val();
+		form_data['csrfmiddlewaretoken'] = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+		$.ajax({
+			url: "index.html",
+			type: "POST",
+			data: form_data,
+			success: function(json) {
+				//console.log(json);
+				if (json['status'] == 'True') {
+					$('#status').html('<div class="alert alert-success">Success!</strong> Zip Code: ' + json["zipCode"] + '</div>');
+					if (json["zip"] == 'True') {
+						$('#zip_body').html('The most important attributes leading to home sales in your area are:');
+						$('#attributes_feature_button').removeClass('btn-disabled');
+						$('#zip_error').remove();
+						trace = {
+							x:[5,8,5,1], 
+							y:[1,2,4,8], 
+							z:[11,8,15,3], 
+							mode:'lines'
+						};
+						data = [trace];
+						$('#visualization_body').html('<div id="vis" style="width:600px; height:250px;"></div>');
+						Plotly.plot('vis', data);
+						$('#visualization_feature_button').removeClass('btn-disabled');
+						$('#visualization_error').remove();
+					} else {
+						
+					}
+					if (json['factors'] == 'True') {
+						$('#factors_body').html('Your home is predicted to __ based on the submitted data and the zip code you provided.');
+						$('#sell_feature_button').removeClass('btn-disabled');
+						$('#factors_error').remove();
+					} else {
+
+					}
+				} else {
+					$('#status').html('<div class="alert alert-danger">Error!</strong> There was an error submiting your data!</div>');
+				}
+			},
+			error: function(xhr, errmsg, err) {
+				//console.log("xhr: " + xhr + ", errmsg: " + errmsg + ", err: " + err);
+			}
+		});
+		$('#zip').val('');
+		$('#price').val('');
+		$('#sqft').val('');
+		$('#acreage').val('');
+		$('#year').val('');
+		$('#neighborhood').val('');
+		$('#school').val('');
+
+	}
 });
 
 var app = angular.module("NostraDomicile", ["ngRoute"]);
@@ -33,15 +93,20 @@ app.config(function($routeProvider) {
 });
 
 app.controller('aboutController', function($scope) {
-   /* $scope.message = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
+    $scope.message1 = 'The goal of the NostraDomicile Project is to create a web application whose two main functions ' +
         'are to predict whether a house will sell in a specific area based on the home’s attributes, and given a zip ' +
-        'code, what are the most important factors leading to a sale in that area.'  +
-        ' \n\n ' +
-        '\nNostraDomicile will accomplish this' +
+
+        'code, what are the most important factors leading to a sale in that area.';
+
+     $scope.message2 =   'NostraDomicile will accomplish this' +
+
         ' goal by retrieving and storing housing market information using a Zillow API and MySQL database, using ' +
+
         'machine learning to evaluate housing data and determine factors influencing home sales in a particular area,' +
+
         ' and creating a user-friendly interface for users to view data about factors influencing home sales and ' +
-        'create data visualizations about houses on the market based on user preferences';*/
+
+        'create data visualizations about houses on the market based on user preferences';
 });
 
 app.controller('contactController', function($scope) {
@@ -53,76 +118,29 @@ app.controller('blogController', function($scope) {
 });
 
 app.controller('helpController', function($scope) {
-    //$scope.message = 'BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG BLOG';
+
+    $scope.message1 = 'NostraDomicile offers three primary functions: "Will Your House Sell?", "Most Important Attributes", and "Data Visualizations".'
+
+	+ 'In order to fulfill the goal of these functions some input is needed.  For the "Will Your House Sell?" function both the Zip Code' +
+
+	    'and your home''s attributes are required.  For the other two functions only the Zip Code of interest is required.';
+
+    $scope.message2 = 'The submit buttons for the primary functions will not work until the proper input has been entered.';
+
+    $scope.message3 = 'Thank you for using NostraDomicile, if you have any questions or concerns feel free to email us through the Contact Us Section.';
+
 });
 
 
 app.controller('selectboxCtrl', function ($scope) {
-    $scope.bedrooms = [{
-	value: '0',
-	text: 'Bedrooms'
-    }, {
-        value: '1',
-	text:'1'
-    }, {
-        value: '2',
-	text: '2'
-    }, {
-       	value: '3',
-	text: '3'
-    }, {
-       	value: '4',
-	text: '4'
-    }, {
-        value: '5',
-	text: '5'
-    }, {
-        value: '6',
-	text: '6'
-    }];
+    $scope.bedrooms = [{value: '0', text: 'Bedrooms'}, {value: '1', text:'1'}, {value: '2', text: '2'}, {value: '3', text: '3'}, {value: '4',text: '4'}, {value: '5',text: '5'}, {value: '6', text: '6'}];
     $scope.checkselection = function () {
         if ($scope.userSelect1 != "" && $scope.userSelect1 != undefined)
             $scope.msg = 'Selected Value: ' + $scope.userSelect1;
         else
             $scope.msg = 'Please Select Dropdown Value';
     };
-    $scope.bathrooms = [{
-       	value: '0',
-	text: 'Bathrooms'
-    }, {
-	value: '1',
-	text: '1'
-    }, {
-        value: '2',
-	text: '1.5'
-    }, {
-	value: '3',
-        text: '2'
-    }, {
-	value: '4',
-        text: '2.5'
-    }, {
-        value: '5',
-	text: '3'
-    }, {
-        value: '6',
-	text: '3.5'
-    }, {
-        value: '7',
-	text: '4'
-    }, {
-        value: '8',
-	text: '4.5'
-    }, {
-        value: '9',
-	text: '5'
-    }, {
-        value: '10',
-	text: '5.5'
-    }, {
-        value: '11',
-	text: '6'
-    }];
+    $scope.bathrooms = [{value: '0', text: 'Bathrooms'}, {value: '1', text: '1'}, {value: '2', text: '1.5'}, {value: '3', text: '2'}, {	value: '4', text: '2.5'}, {value: '5', text: '3'}, {value: '6', text: '3.5'}, {value: '7', text: '4'}, {value: '8', text: '4.5'}, {value: '9', text: '5'}, {value: '10', text: '5.5'}, {value: '11', text: '6'}];
 
     $scope.checkselection = function () {
         if ($scope.userselect2 != "" && $scope.userSelect2 != undefined)
@@ -131,22 +149,7 @@ app.controller('selectboxCtrl', function ($scope) {
                 $scope.msg = 'Please Select a Dropdown Value';
     };
 
-    $scope.stories = [{
-	value: '0',
-	text: 'Story'
-    }, {
-	value: '1',
-	text: '1'
-    }, {
-	value: '2',
-	text: '2'
-    }, {
-	value: '3',
-	text:  '3'
-    }, {
-	value: '4',
-	text: '4'
-    }];
+    $scope.stories = [{value: '0', text: 'Story'}, {value: '1',	text: '1'}, {value: '2', text: '2'}, {value: '3', text:  '3'}, {value: '4',	text: '4'}];
 
     $scope.checkselection = function () {
         if ($scope.userSelect3 != "" && $scope.userSelect3 != undefined)
@@ -155,86 +158,38 @@ app.controller('selectboxCtrl', function ($scope) {
             $scope.msg = 'Please Select Dropdown Value';
     };
 
-    $scope.TypeList = [{
-	value: '0',
-	text: 'Type'
-    }, {
-        value: '1',
-	text: 'Unknown'
-    }, {
-	value: '2',
-        text: 'SingleFamily'
-    }, {
-	value: '3',
-        text: 'Duplex'
-    }, {
-	value: '4',
-        text: 'Triplex'
-    }, {
-	value: '5',
-        text: 'Quadruplex'
-    }, {
-	value: '6',
-        text: 'Condominium'
-    }, {
-	value: '7',
-        text: 'Cooperative'
-    }, {
-	value: '8',
-        text: 'Mobile'
-    }, {
-	value: '9',
-        text: 'MultiFamily2To4'
-    }, {
-	value: '10',
-        text: 'MultiFamily5Plus'
-    }, {
-	value: '11',
-        text: 'Timeshare'
-    }, {
-	value: '12',
-        text: 'Miscellaneous'
-    },{
-	value: '13',
-        text: 'VacantResidentialLand'
-    }];
+    $scope.TypeList = [{value: '0',	text: 'Type'}, {value: '1',	text: 'Unknown'}, {value: '2', text: 'SingleFamily'}, {value: '3', text: 'Duplex'}, {value: '4', text: 'Triplex'}, {value: '5', text: 'Quadruplex'}, {value: '6', text: 'Condominium'}, {value: '7', text: 'Cooperative'}, {value: '8', text: 'Mobile'}, {value: '9', text: 'MultiFamily2To4'}, {value: '10', text: 'MultiFamily5Plus'}, {value: '11', text: 'Timeshare'}, {value: '12', text: 'Miscellaneous'},{value: '13', text: 'VacantResidentialLand'}];
     $scope.checkselection = function () {
         if ($scope.userSelect4 != "" && $scope.userSelect4 != undefined)
             $scope.msg = 'Selected Value: ' + $scope.userSelect4;
         else
             $scope.msg = 'Please Select Dropdown Value';
+
     };
 
-    $scope.ParkingList = [{
-	value: '0',
-	text: 'Parking'
-    }, {
-	value: '1',
-        text: 'Garage-Attached'
-    }, {
-	value: '2',
-        text: 'Carport'
-    }, {
-	value: '3',
-        text: 'Off-street'
-    }, {
-	value: '4',
-        text: 'Garage-Detached'
-    }, {
-	value: '5',
-       	text: 'None'
 
-    }];
+
+    $scope.ParkingList = [{value: '0', text: 'Parking'}, {value: '1', text: 'Garage-Attached'}, {value: '2', text: 'Carport'}, {value: '3', text: 'Off-street'}, {value: '4', text: 'Garage-Detached'}, {value: '5',text: 'None'}];
+
+
 
     $scope.checkselection = function () {
+
         if ($scope.userselect5 != "" && $scope.userSelect5 != undefined)
+
                 $scope.msg = 'Selected Value: ' + $scope.userSelect5;
+
         else 
+
                 $scope.msg = 'Please Select a Dropdown Value';
+
     };
+
+
 
 	//
 
+/*
     $scope.result = 'hidden'
     $scope.resultMessage;
     $scope.rfData; //formData is an object holding the name, email, subject, and message
@@ -267,69 +222,40 @@ app.controller('selectboxCtrl', function ($scope) {
             $scope.result='bg-danger';
         }
     }
+*/
 	//
 });
 
 app.controller('ContactController', function ($scope, $http) {
-
     $scope.result = 'hidden'
-
     $scope.resultMessage;
-
     $scope.formData; //formData is an object holding the name, email, subject, and message
-
     $scope.submitButtonDisabled = false;
-
     $scope.submitted = false; //used so that form errors are shown only after the form has been submitted
-
     $scope.submit = function(contactform) {
-
         $scope.submitted = true;
-
         $scope.submitButtonDisabled = true;
-
         if (contactform.$valid) {
-
             $http({
-
-                method  : 'POST',
-
+            method  : 'POST',
             url     : 'contact-form.php',
-
             data    : $.param($scope.formData),  //param method from jQuery
-
             headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
-
         }).success(function(data){
-
                 console.log(data);
-
                 if (data.success) { //success comes from the return json object
-
                     $scope.submitButtonDisabled = true;
-
                     $scope.resultMessage = data.message;
-
                     $scope.result='bg-success';
-
                 } else {
-
                     $scope.submitButtonDisabled = false;
-
                     $scope.resultMessage = data.message;
-
                     $scope.result='bg-danger';
-
                 }
-
             });
-
         } else {
-
             $scope.submitButtonDisabled = false;
-
             $scope.resultMessage = 'Failed <img src="http://www.chaosm.net/blog/wp-includes/images/smilies/icon_sad.gif" alt=":(" class="wp-smiley">  Please fill out all the fields.';
-
             $scope.result='bg-danger';
 
         }
@@ -337,6 +263,7 @@ app.controller('ContactController', function ($scope, $http) {
     }
 
 });
+
 
 
 
