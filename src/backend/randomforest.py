@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.externals import joblib
 from sklearn.model_selection import KFold
+from sklearn.cross_validation import cross_val_score
 
 f = open(sys.argv[1],'rb')
 reader = csv.reader(f)
@@ -29,7 +30,6 @@ all_val = all_val.drop('zip',axis=1)
 all_val = all_val.drop('roof_type',axis=1)
 all_label = df[['sold_binary']]
 
-print all_val
 
 observations = len(all_val.index)
 trainTestSplit = observations // 3
@@ -41,15 +41,17 @@ test_label = all_label.tail(trainTestSplit)
 
 kf = KFold(n_splits=10, random_state=0)
 kf.get_n_splits(all_val)
-print kf
+
 
 rf = RandomForestClassifier(n_estimators=3500,oob_score=True,n_jobs=-1)
 
 rf.fit(train_val.values,train_label.values.ravel())
 predicted = rf.predict(test_val.values)
 
+#np.reshape(all_label.values,[500,])
+kfscores = cross_val_score(rf, all_val, all_label.values.ravel(), cv=10, scoring='accuracy')
 
-
+print "Cross validated score is: " + str(kfscores.mean())
 print "Random Forest accuracy score is: " + str(accuracy_score(test_label.values,predicted,normalize='False'))
 print str("Out of Bag score is: " + str(rf.oob_score_))
 print str("Classification report for classifier %s \n%s\n" % (rf, metrics.classification_report(test_label.values, predicted)))
