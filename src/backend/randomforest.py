@@ -51,8 +51,7 @@ predicted = rf.predict(test_val.values)
 #np.reshape(all_label.values,[500,])
 kfscores = cross_val_score(rf, all_val, all_label.values.ravel(), cv=10, scoring='accuracy')
 
-print "Cross validated score is: " + str(kfscores.mean())
-print "Random Forest accuracy score is: " + str(accuracy_score(test_label.values,predicted,normalize='False'))
+print "Cross validated Accuracy score is: " + str(kfscores.mean())
 print str("Out of Bag score is: " + str(rf.oob_score_))
 print str("Classification report for classifier %s \n%s\n" % (rf, metrics.classification_report(test_label.values, predicted)))
 
