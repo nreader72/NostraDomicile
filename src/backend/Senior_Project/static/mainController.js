@@ -123,7 +123,7 @@ app.controller('helpController', function($scope) {
 
 	+ 'In order to fulfill the goal of these functions some input is needed.  For the "Will Your House Sell?" function both the Zip Code' +
 
-	    'and your home''s attributes are required.  For the other two functions only the Zip Code of interest is required.';
+	    'and your home\'s attributes are required.  For the other two functions only the Zip Code of interest is required.';
 
     $scope.message2 = 'The submit buttons for the primary functions will not work until the proper input has been entered.';
 
