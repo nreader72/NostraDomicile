@@ -3,32 +3,62 @@ import mysql.connector
 import json
 import pandas as pd
 import numpy as np
+import csv
 #import plotly.tools as tls
 from django.http import HttpResponse
 from django.shortcuts import render
 from NostraDomicile.models import HomeData
-#from rfLoad import Classify
+from rfLoad import classify
+
 
 def test(request):
 	db = mysql.connector.connect(user='ctsimaan', password='SeniorProject490', host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com', database='PyZillow_Data')
 	cursor = db.cursor()
-	cursor.execute('SELECT * FROM `PyZillow_Data`.`home_data` LIMIT 5')
-	text = '<html><head><style>tr { border: 1px solid black; }</style></head><body><table cellspacing="5" cellpadding="5" style="border:1px solid black; border-collapse:collapse;"><tr>'
-	for i in range(len(cursor.description)):
-		text += '<th>' + str(cursor.description[i][0]) + '</th>'
-	text += '</tr>'
-	for row in cursor.fetchall():
-		text += '<tr>'
-		for column in row:
-			text += '<td>' + str(column) + '</td>'
-		text += '</tr>'
-	text += '</table></body></html>'
+	query = 'SELECT * \nFROM `PyZillow_Data`.`home_data`\nWHERE `home_data`.`zip` = %s'
+	cursor.execute(query,('27358',))
+	result = cursor.fetchall()
+	list = str(result)
+	fp = open('NostraDomicile/test.txt','w+')
+	fp.write(list)
+	fp.close()
+	text = "Test:" + str(classify('NostraDomicile/test.txt'))
+	
+	
+	#cursor.execute('SELECT * FROM `PyZillow_Data`.`home_data` LIMIT 10')
+	#text = '<html><head><style>tr { border: 1px solid black; }</style></head><body><table cellspacing="5" cellpadding="5" style="border:1px solid black; border-collapse:collapse;"><tr>'
+	#for i in range(len(cursor.description)):
+	#	text += '<th>' + str(cursor.description[i][0]) + '</th>'
+	#text += '</tr>'
+	#for row in cursor.fetchall():
+	#for row in result:
+	#	text += '<tr>'
+	#	for column in row:
+	#		text += '<td>' + str(column) + '</td>'
+	#	text += '</tr>'
+	#text += '</table></body></html>'
+	
 	db.close()
+	
 	return HttpResponse(text)
 
 def index(request):
 	version = '0.79'
 	if request.method == 'POST':
+	#	db = mysql.connector.connect(user='ctsimaan', password='SeniorProject490', host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com', database='PyZillow_Data')
+	#	cursor = db.cursor()
+
+		
+	#	zCode = request.POST['zipCode']
+	#	query = 'SELECT * \nFROM `PyZillow_Data`.`home_data`\nWHERE `home_data`.`zip` = %s'
+	#	cursor.execute(query,(zCode,))
+		
+	#	result = cursor.fetchall()
+	#	fp = open('test.txt','w+')
+	#	testFile = csv.writer(fp)
+	#	testFile.writerows(result)
+		#reader = csv.reader(fp)
+	#	fp.close()
+		
 		response_data = {}
 		response_data['status'] = 'True'
 		response_data['zip'] = 'True'
@@ -37,6 +67,9 @@ def index(request):
 		response_data['zipCode'] = request.POST['zipCode']
 		response_data['session'] = '???'
 		
+
+	#	db.close()
+		
 		#return render(request, 'index.html', {'version': version, 'status': status, 'message': message, 'zipCode': zipCode, 'session': session})
 		return HttpResponse(json.dumps(response_data), content_type="application/json")
 	else:
@@ -44,3 +77,4 @@ def index(request):
 def rf(request):
 	text = 'hi' #classify("28205.txt")
 	return HttpResponse(text)
+
