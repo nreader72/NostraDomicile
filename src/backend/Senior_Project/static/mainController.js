@@ -9,6 +9,17 @@ $(document).ready(function(){
 	function submit_post() {
 		form_data = {};
 		form_data['zipCode'] = $('#zip').val();
+		form_data['price'] = $('#price').val();
+		form_data['sqft'] = $('#sqft').val();
+		form_data['acreage'] = $('#acreage').val();
+		form_data['year'] = $('#year').val();
+		form_data['neighborhood'] = $('#neighborhood').val();
+		form_data['school'] = $('#school').val();
+		form_data['bedrooms'] = $('#bedroomSelect').val();
+		form_data['bathrooms'] = $('#bathroomSelect').val();
+		form_data['stories'] = $('#storiesSelect').val();
+		form_data['home'] = $('#homeSelect').val();
+		form_data['parking'] = $('#parkingSelect').val();
 		form_data['csrfmiddlewaretoken'] = document.getElementsByName('csrfmiddlewaretoken')[0].value;
 		$.ajax({
 			url: "index.html",
@@ -17,7 +28,7 @@ $(document).ready(function(){
 			success: function(json) {
 				//console.log(json);
 				if (json['status'] == 'True') {
-					$('#status').html('<div class="alert alert-success">Success!</strong> Zip Code: ' + json["zipCode"] + '</div>');
+					$('#status').html('<div class="alert alert-success">Success!</strong> ' + json["message"] + '</div>');
 					if (json["zip"] == 'True') {
 						$('#zip_body').html('The most important attributes leading to home sales in your area are:');
 						$('#attributes_feature_button').removeClass('btn-disabled');

@@ -8,7 +8,7 @@ import csv
 from django.http import HttpResponse
 from django.shortcuts import render
 from NostraDomicile.models import HomeData
-from rfLoad import classify
+from sold_classifier import sold_classifier
 
 
 def test(request):
@@ -21,7 +21,7 @@ def test(request):
 	fp = open('NostraDomicile/test.txt','w+')
 	fp.write(list)
 	fp.close()
-	text = "Test:" + str(classify('NostraDomicile/test.txt'))
+	text = "Test:" + str(sold_classifier('27358'))
 	
 	
 	#cursor.execute('SELECT * FROM `PyZillow_Data`.`home_data` LIMIT 10')
@@ -42,13 +42,20 @@ def test(request):
 	return HttpResponse(text)
 
 def index(request):
-	version = '0.79'
+	version = '0.81'
 	if request.method == 'POST':
+
+		#output = sold_classifier(zipC)
+		output = ''
+		for key in request.POST:
+			if key != 'csrfmiddlewaretoken':
+				output += key + ': ' + request.POST[key] + ', '
+		
 	#	db = mysql.connector.connect(user='ctsimaan', password='SeniorProject490', host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com', database='PyZillow_Data')
 	#	cursor = db.cursor()
 
 		
-	#	zCode = request.POST['zipCode']
+
 	#	query = 'SELECT * \nFROM `PyZillow_Data`.`home_data`\nWHERE `home_data`.`zip` = %s'
 	#	cursor.execute(query,(zCode,))
 		
@@ -63,9 +70,11 @@ def index(request):
 		response_data['status'] = 'True'
 		response_data['zip'] = 'True'
 		response_data['factors'] = 'False'
-		response_data['message'] = 'Your housing information has successfully been submitted!'
-		response_data['zipCode'] = request.POST['zipCode']
-		response_data['session'] = '???'
+		response_data['message'] = 'Your housing information has been submitted! These are the values you submitted: <br>' + output
+
+		if request.POST['price'] != '':
+			response_data['factors'] = 'True'
+
 		
 
 	#	db.close()
