@@ -81,25 +81,17 @@ feature_importance = rf.feature_importances_
 
 # In[166]:
 
-# make importances relative to max importance
 feature_importance = 100.0 * (feature_importance / feature_importance.max())
- 
-# A threshold below which to drop features from the final data set. Specifically, this number represents
+
 # the percentage of the most important feature's importance value
-fi_threshold = 15
- 
+fi_threshold = 15 
 # Get the indexes of all features over the importance threshold
 important_idx = np.where(feature_importance > fi_threshold)[0]
  
 # Create a list of all the feature names above the importance threshold
 important_features = features[important_idx]
-#print("n", important_features.shape[0], "Important features(>", fi_threshold, "% of max importance):n",important_features)
- 
 # Get the sorted indexes of important features
 sorted_idx = np.argsort(feature_importance[important_idx])[::-1]
-#print("nFeatures sorted by importance (DESC):n", important_features[sorted_idx])
- 
-# Adapted from http://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html
 pos = np.arange(sorted_idx.shape[0]) + .5
 plt.subplot(1, 2, 2)
 plt.barh(pos, feature_importance[important_idx][sorted_idx[::-1]], align='center')
@@ -109,16 +101,3 @@ plt.title('Variable Importance')
 plt.draw()
 plt.show()
  
-# Remove non-important features from the feature set, and reorder those remaining
-#X = X[:, important_idx][:, sorted_idx]
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
