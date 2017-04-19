@@ -84,10 +84,13 @@ def feat_extract(input_csv):
 	all_val = all_val.drop('roof_type',axis=1)
 	all_label = df[['sold_binary']]
 
-
+	features = []
         rf = joblib.load('rfTemp.pkl')
         predicted = rf.predict(all_val.values)
 	sfm = SelectFromModel(rf, threshold=0.15)
         sfm.fit(all_val, all_label)
 	for feature_list_index in sfm.get_support(indices=True):
 		print(headers[feature_list_index])
+		features.append(headers[feature_list_index])
+
+	return features
