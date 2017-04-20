@@ -23,9 +23,9 @@ def attribute_classifier(zip_code):
 
 
     # In[2]:
-
-    df_pd = pd.read_sql('SELECT*FROM PyZillow_Data.home_data Where zip = 27705', con = cnx)
-    #print(df_pd)
+    query = 'SELECT*FROM PyZillow_Data.home_data Where zip =' + zip_code
+    df_pd = pd.read_sql(query, con = cnx)
+    print(df_pd)
     frames = [df_pd,df_pd]
     df_pd = pd.concat(frames)
     #list(df_pd)
@@ -75,7 +75,7 @@ def attribute_classifier(zip_code):
     #print(results.mean())
     feature_importance = rf.feature_importances_
     #print "Features sorted by their score:"
-    print sorted(zip(map(lambda x: round(x, 4), rf.feature_importances_), features))     
+    (sorted(zip(map(lambda x: round(x, 4), rf.feature_importances_), features)))
 	#reverse=True)
     #print(rf.feature_importances_)
 
@@ -87,7 +87,7 @@ def attribute_classifier(zip_code):
  
     # A threshold below which to drop features from the final data set. Specifically, this number represents
     # the percentage of the most important feature's importance value
-    # @ctsimaan - increased fi_threshold to 50 from 15 in order to reduce list of output attributes.
+    
     fi_threshold = 50
  
 # Get the indexes of all features over the importance threshold
@@ -97,7 +97,14 @@ def attribute_classifier(zip_code):
     important_features = features[important_idx]
     #print(important_features)
 #print("n", important_features.shape[0], "Important features(>", fi_threshold, "% of max importance):n",important_features)
-    return important_features
+
+    imp_feat = str(important_features)
+    imp_feat = imp_feat[7:-24]
+    imp_feat = imp_feat.replace("u\'","")
+    imp_feat = imp_feat.replace("\'","")
+    print imp_feat
+    return imp_feat
+
 # Get the sorted indexes of important features
 #sorted_idx = np.argsort(feature_importance[important_idx])[::-1]
 #print("nFeatures sorted by importance (DESC):n", important_features[sorted_idx])
@@ -122,4 +129,5 @@ def attribute_classifier(zip_code):
 
 
 # In[ ]:
+
 
