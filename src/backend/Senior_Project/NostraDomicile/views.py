@@ -9,7 +9,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from NostraDomicile.models import HomeData
 from sold_classifier import sold_classifier
-
+from attribute_classifier import attribute_classifier
 
 def test(request):
 	db = mysql.connector.connect(user='ctsimaan', password='SeniorProject490', host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com', database='PyZillow_Data')
@@ -44,7 +44,7 @@ def test(request):
 def index(request):
 	version = '0.81'
 	if request.method == 'POST':
-
+		attributes = attribute_classifier(request.POST['zipCode'])
 		#output = sold_classifier(zipC)
 		output = ''
 		for key in request.POST:
@@ -70,7 +70,7 @@ def index(request):
 		response_data['status'] = 'True'
 		response_data['zip'] = 'True'
 		response_data['factors'] = 'False'
-		response_data['message'] = 'Your housing information has been submitted! These are the values you submitted: <br>' + output
+		response_data['message'] = 'Your housing information has been submitted! These are the values you submitted: <br>' + output + '<br> Random Forest results:' + attributes
 
 		if request.POST['price'] != '':
 			response_data['factors'] = 'True'
@@ -86,4 +86,3 @@ def index(request):
 def rf(request):
 	text = 'hi' #classify("28205.txt")
 	return HttpResponse(text)
-
