@@ -23,9 +23,10 @@ def attribute_classifier(zip_code):
 
 
     # In[2]:
+
     query = 'SELECT*FROM PyZillow_Data.home_data Where zip =' + zip_code
     df_pd = pd.read_sql(query, con = cnx)
-    print(df_pd)
+    #print(df_pd)
     frames = [df_pd,df_pd]
     df_pd = pd.concat(frames)
     #list(df_pd)
@@ -33,8 +34,7 @@ def attribute_classifier(zip_code):
 
     # In[3]:
 
-    #new = df_pd.filter(['sold_binary', 'home_type', 'bedrooms', 'bathrooms', 'finished_sq_footage',
-    #'lot_size_sq_footage','year_built','last_sale_price','neighborhood', 'school_district'], axis = 1)
+    
     df_pd.drop(['street_address','zip','city', 'state','room_types','roof_type','last_sold_date','heating_system'],inplace=True,axis=1)
     cols_to_transform = [ 'home_type','neighborhood','school_district','appliances','floor_covering','heating_sources','parking_type']
     df_dum = pd.get_dummies(data=df_pd,columns = cols_to_transform)
@@ -46,17 +46,11 @@ def attribute_classifier(zip_code):
     train, test = train_test_split(df_dum, test_size = 0.2)
     #how to fix sold binary showing up in wrong position
     bSoldDF = pd.DataFrame(df_dum.pop('sold_binary'))
-    #dfs= [bSoldDF,df_dum]
     df_dum = pd.concat([bSoldDF,df_dum],axis=1)
     col_length = len(df_dum.columns)
     #have to get the length of df_dum before this
     features = df_dum.columns[1:col_length]
-    #df_dum =df_dum.reindex(columns=['sold_binary'],cols[-1:].union(cols[:-1]) )
-    #df_dum.insert('bedrooms', 'sold_binary', df_dum.mean(1))
-    #print(features)
-
-
-    # In[5]:
+    
 
     seed = 7
     max_features = 3
@@ -75,10 +69,7 @@ def attribute_classifier(zip_code):
     #print(results.mean())
     feature_importance = rf.feature_importances_
     #print "Features sorted by their score:"
-    (sorted(zip(map(lambda x: round(x, 4), rf.feature_importances_), features)))
-	#reverse=True)
-    #print(rf.feature_importances_)
-
+    
 
     # In[6]:
 
@@ -87,46 +78,24 @@ def attribute_classifier(zip_code):
  
     # A threshold below which to drop features from the final data set. Specifically, this number represents
     # the percentage of the most important feature's importance value
-    
+    # @ctsimaan - increased fi_threshold to 50 from 15 in order to reduce list of output attributes.
     fi_threshold = 50
- 
-# Get the indexes of all features over the importance threshold
+    # Get the indexes of all features over the importance threshold
     important_idx = np.where(feature_importance > fi_threshold)[0]
- 
-# Create a list of all the feature names above the importance threshold
+    # Create a list of all the feature names above the importance threshold
     important_features = features[important_idx]
+    # Get the sorted indexes of important features
+    sorted_idx = np.argsort(feature_importance[important_idx])[::-1]
+    pos = np.arange(sorted_idx.shape[0]) + .5
+    fiKeys = important_features[sorted_idx]
+    fiValues = feature_importance[important_idx][sorted_idx[::1]]
+    importance = pd.DataFrame(data =fiKeys , index=sorted_idx[::1],columns=["Features"])
+    test = pd.DataFrame(data=fiValues, index=sorted_idx[::1],columns=["Importance"])
+    feat_rank = pd.concat([importance,test],axis=1)
+
     #print(important_features)
-#print("n", important_features.shape[0], "Important features(>", fi_threshold, "% of max importance):n",important_features)
-
-    imp_feat = str(important_features)
-    imp_feat = imp_feat[7:-24]
-    imp_feat = imp_feat.replace("u\'","")
-    imp_feat = imp_feat.replace("\'","")
-    return imp_feat
-
-# Get the sorted indexes of important features
-#sorted_idx = np.argsort(feature_importance[important_idx])[::-1]
-#print("nFeatures sorted by importance (DESC):n", important_features[sorted_idx])
- 
-# Adapted from http://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html
-#pos = np.arange(sorted_idx.shape[0]) + .5
-#plt.subplot(1, 2, 2)
-#plt.barh(pos, feature_importance[important_idx][sorted_idx[::-1]], align='center')
-#plt.yticks(pos, important_features[sorted_idx[::-1]])
-#plt.xlabel('Relative Importance')
-#plt.title('Variable Importance')
-#plt.draw()
-#plt.show()
- 
-# Remove non-important features from the feature set, and reorder those remaining
-#X = X[:, important_idx][:, sorted_idx]
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
+    #print("n", important_features.shape[0], "Important features(>", fi_threshold, "% of max importance):n",important_features)
+    #return important_features
+    return feat_rank
 
 
