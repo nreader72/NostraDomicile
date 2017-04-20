@@ -13,7 +13,7 @@ from sklearn import model_selection
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_recall_fscore_support
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 def attribute_classifier(zip_code):
     cnx = mysql.connector.connect(user='ctsimaan',password='SeniorProject490',
