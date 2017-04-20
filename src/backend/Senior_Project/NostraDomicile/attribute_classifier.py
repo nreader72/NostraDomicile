@@ -102,7 +102,6 @@ def attribute_classifier(zip_code):
     imp_feat = imp_feat[7:-24]
     imp_feat = imp_feat.replace("u\'","")
     imp_feat = imp_feat.replace("\'","")
-    print imp_feat
     return imp_feat
 
 # Get the sorted indexes of important features
