@@ -1,12 +1,23 @@
 $(document).ready(function(){
 	$('[data-toggle="popover"]').popover();
 
+	$('#loading').hide();
+	jQuery.ajaxSetup({
+		beforeSend: function() {
+			$('#loading').show();
+		},
+		complete: function() {
+			$('#loading').hide();
+		},
+		success: function() {}
+	});
 	$('#rf').on('submit', function(event) {
 		event.preventDefault();
 		submit_post();
 	});
 
 	function submit_post() {
+		$('#status').hide();
 		form_data = {};
 		form_data['zipCode'] = $('#zip').val();
 		form_data['price'] = $('#price').val();
@@ -28,9 +39,9 @@ $(document).ready(function(){
 			success: function(json) {
 				//console.log(json);
 				if (json['status'] == 'True') {
-					$('#status').html('<div class="alert alert-success">Success!</strong> ' + json["message"] + '</div>');
+					$('#status').html('<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success!</strong> ' + json["message"] + '</div>');
 					if (json["zip"] == 'True') {
-						$('#zip_body').html('The most important attributes leading to home sales in your area are:');
+						$('#zip_body').html('The most important attributes leading to home sales in your area are:<br />' + json['attributes']);
 						$('#attributes_feature_button').removeClass('btn-disabled');
 						$('#zip_error').remove();
 						trace = {
@@ -55,11 +66,12 @@ $(document).ready(function(){
 
 					}
 				} else {
-					$('#status').html('<div class="alert alert-danger">Error!</strong> There was an error submiting your data!</div>');
+					$('#status').html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> There was an error submiting your data!</div>');
 				}
+				$('#status').show();
 			},
 			error: function(xhr, errmsg, err) {
-				//console.log("xhr: " + xhr + ", errmsg: " + errmsg + ", err: " + err);
+				$('#status').html('<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Error!</strong> There was an error submitting your data!</div>');
 			}
 		});
 		$('#zip').val('');

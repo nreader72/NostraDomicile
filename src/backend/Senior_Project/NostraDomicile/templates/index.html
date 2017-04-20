@@ -61,18 +61,21 @@
 		<!-- Second Container -->
 		<div class="container-fluid bg-5 text-center">
 			<div id="status"></div>
+			<div id="loading"></div>
 			<form id="rf" action="" method="POST">
 				{% csrf_token %}
 
 				{% if status == 'True' %}
-				<div class="alert alert-success">
+				<div class="alert alert-success alert-dismissable">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close"&times;</a>
 					<strong>Success!</strong> {{message}}
 					<br />{{zipCode}}
 					<br />{{session}}
 				</div>
 				{% else %}
 					{% if status == 'Fail' %}
-					<div class="alert alert-danger">
+					<div class="alert alert-danger alert-dismissable">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close"&times;</a>
 						<strong>Failure!</strong> {{message}}
 						<br />{{zipCode}}
 						<br />{{session}}
