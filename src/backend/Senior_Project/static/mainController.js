@@ -41,19 +41,18 @@ $(document).ready(function(){
 				if (json['status'] == 'True') {
 					$('#status').html('<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success!</strong> ' + json["message"] + '</div>');
 					if (json["zip"] == 'True') {
-						/*
-						var features = json['attributes'].split(" ");
-						alert("0:" + features);
-						alert("1:" + json['attributes']);
+						
+						var features = json['attributes'].split(",");
+
 						var features_trace = {
-							x:[features[3], features[6], features[9], features[12], features[15], features[18], features[21]],
-							y:[features[4], features[7], features[10], features[13], features[16], features[19]],
+							x:[features[0], features[2], features[4], features[6], features[8], features[10], features[12]],
+							y:[features[1], features[3], features[5], features[7], features[9], features[11]],
 							type:'bar'
 						};
 						var feature_data = [features_trace];							
-						*/
-						$('#zip_body').html('The most important attributes leading to home sales in your area are:<br />' + json['attributes']);//<div id="features_vis" style="width:600px; height:250px;"></div>'); //json['attributes']);
-						//Plotly.plot('features_vis', feature_data);	
+						
+						$('#zip_body').html('The most important attributes leading to home sales in your area are:<br /><div id="features_vis" style="width:600px; height:600px;"></div>'); //json['attributes']);
+						Plotly.plot('features_vis', feature_data);	
 
 						$('#attributes_feature_button').removeClass('btn-disabled');
 						$('#zip_error').remove();
