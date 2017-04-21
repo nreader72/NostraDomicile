@@ -89,10 +89,17 @@ def attribute_classifier(zip_code):
     pos = np.arange(sorted_idx.shape[0]) + .5
     fiKeys = important_features[sorted_idx]
     fiValues = feature_importance[important_idx][sorted_idx[::1]]
-    importance = pd.DataFrame(data =fiKeys , index=sorted_idx[::1],columns=["Features"])
-    test = pd.DataFrame(data=fiValues, index=sorted_idx[::1],columns=["Importance"])
-    feat_rank = pd.concat([importance,test],axis=1)
+    #importance = pd.DataFrame(data =fiKeys , index=sorted_idx[::1],columns=["Features"])
+    #test = pd.DataFrame(data=fiValues, index=sorted_idx[::1],columns=["Importance"])
+    #feat_rank = pd.concat([importance,test],axis=1)
+    feat_rank = []
+    for x in range(len(fiKeys)):
+        feat_rank.append(fiKeys[x])
+        feat_rank.append(",")
+        feat_rank.append(fiValues[x])
+        feat_rank.append(",")
 
+    feat_rank = ''.join(str(e) for e in feat_rank)        
     #print(important_features)
     #print("n", important_features.shape[0], "Important features(>", fi_threshold, "% of max importance):n",important_features)
     #return important_features
