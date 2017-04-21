@@ -54,6 +54,7 @@ $(document).ready(function(){
 						$('#zip_body').html('The most important attributes leading to home sales in your area are:<br /><div id="features_vis" style="width:600px; height:600px;"></div>'); //json['attributes']);
 						Plotly.plot('features_vis', feature_data);	
 
+
 						$('#attributes_feature_button').removeClass('btn-disabled');
 						$('#zip_error').remove();
 						var trace = {
