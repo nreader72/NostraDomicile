@@ -79,7 +79,7 @@ def attribute_classifier(zip_code):
     # A threshold below which to drop features from the final data set. Specifically, this number represents
     # the percentage of the most important feature's importance value
     # @ctsimaan - increased fi_threshold to 50 from 15 in order to reduce list of output attributes.
-    fi_threshold = 50
+    fi_threshold = 30
     # Get the indexes of all features over the importance threshold
     important_idx = np.where(feature_importance > fi_threshold)[0]
     # Create a list of all the feature names above the importance threshold
