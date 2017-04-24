@@ -42,7 +42,7 @@ def test(request):
 	return HttpResponse(text)
 
 def index(request):
-	version = '0.975'
+	version = '0.977'
 	if request.method == 'POST':
 		attributes = attribute_classifier(request.POST['zipCode'])
 		output = ''
@@ -83,7 +83,7 @@ def index(request):
 			response_data['sold'] = sold
 		
 		#Visualization feature
-
+		
 
 	#	db.close()
 		

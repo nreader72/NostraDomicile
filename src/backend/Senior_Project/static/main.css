@@ -26,7 +26,7 @@ h3 .dropdown {
 }
 .bg-1 {
 	/*changed background, color*/
-	background-image: url("static/imageFolder/bground.png");
+	background-image: url("imageFolder/bground.png");
 	border: 5px solid white;
 	/*background-color: #1abc9c;*/ /* Green */
 	color: #ffffff;
