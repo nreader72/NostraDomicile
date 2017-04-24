@@ -25,13 +25,16 @@ h3 .dropdown {
 	display: inline-block; 
 }
 .bg-1 {
+	/*changed background, color*/
+	background-image: url("static/imageFolder/bground.png");
 	border: 5px solid white;
-	background-color: #1abc9c; /* Green */
+	/*background-color: #1abc9c;*/ /* Green */
 	color: #ffffff;
 }
 .bg-2 {
+	/*changed background color*/
 	border: 5px solid white;
-	background-color: #d3d3d3; /* Dark Blue */
+	background-color: #7b89a0; /* Dark Blue */
 	color: #555555;
 }
 .bg-3 {
@@ -46,8 +49,9 @@ h3 .dropdown {
 }
 
 .bg-5 {
+	/*changed color*/
 	border: 5px solid white;
-	background-color: #708090;
+	background-color: #c1c1ac;
 	color: #555555
 }
 .container-fluid {
@@ -91,10 +95,12 @@ h3 .dropdown {
 	text-align: left;
 }
 div.card {
+	/*changed card shadow, text color*/
           width: 400px;
           height: 500px;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.2), 8px 8px 20px 8px rgba(0, 0, 0, 0.19);
           text-align: center;
+          color:white;
 }
 .btn-disabled {
 	background-color:rgb(139,0,0);
