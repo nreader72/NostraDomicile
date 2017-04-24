@@ -68,6 +68,7 @@ def index(request):
 		#reader = csv.reader(fp)
 	#	fp.close()
 		
+		# Main factors feature
 		response_data = {}
 		response_data['status'] = 'True'
 		response_data['zip'] = 'True'
@@ -75,11 +76,14 @@ def index(request):
 		response_data['message'] = 'Your housing information has been submitted! These are the values you submitted: <br>' + output 
 		response_data['attributes'] = str(attributes)
 
+		# Attributes feature
 		if request.POST['zipCode'] != '' and request.POST['price'] != '' and request.POST['sqFootage'] != '' and request.POST['acreage'] != '' and request.POST['yearBuilt'] != '' and request.POST['Neighborhood'] != '' and request.POST['schoolDistrict'] != '' and request.POST['bedroomsNum'] != '0' and request.POST['bathroomsNum'] != '0' and request.POST['storiesNum'] != '0' and request.POST['homeType'] != '0' and request.POST['parkingType'] != '0':
 			response_data['factors'] = 'True'
 			sold = sold_classifier(request.POST['zipCode'],request.POST['bedroomsNum'],request.POST['bathroomsNum'],request.POST['sqFootage'],request.POST['acreage'],request.POST['yearBuilt'],request.POST['price'],request.POST['homeType'],request.POST['Neighborhood'],request.POST['schoolDistrict'],request.POST['parkingType'],request.POST['storiesNum'])
 			response_data['sold'] = sold
 		
+		#Visualization feature
+
 
 	#	db.close()
 		
