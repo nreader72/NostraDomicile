@@ -3,16 +3,15 @@
 
 # In[ ]:
 
-#import mysql
-#import mysql.connector
-#import csv
-#import pandas as pd
-#import numpy as np
-#import scipy
-#from sklearn import model_selection
-#from sklearn.model_selection import train_test_split
-#from sklearn.ensemble import RandomForestClassifier
-#from sklearn.metrics import precision_recall_fscore_support
+import mysql.connector
+import csv
+import pandas as pd
+import numpy as np
+import scipy
+from sklearn import model_selection
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import precision_recall_fscore_support
 
 
 #zip code for this is 27705
@@ -77,6 +76,6 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #print(results.mean())
     #print "Features sorted by their score:"
     #print sorted(zip(map(lambda x: round(x, 4), rf.feature_importances_), features), 
-                 #reverse=True)
+    #reverse=True)
     return preds[-1]
 
