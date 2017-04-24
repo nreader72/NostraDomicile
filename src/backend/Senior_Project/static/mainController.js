@@ -72,6 +72,7 @@ $(document).ready(function(){
 						
 					}
 					if (json['factors'] == 'True') {
+						alert('sold:' + json['sold']);
 						$('#factors_body').html('Your home is predicted to __ based on the submitted data and the zip code you provided.');
 						$('#sell_feature_button').removeClass('btn-disabled');
 						$('#factors_error').remove();
@@ -150,7 +151,7 @@ app.controller('contactController', function($scope) {
 });
 
 app.controller('blogController', function($scope) {
-    $scope.message = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, ';
+    //$scope.message = '';
 });
 
 app.controller('helpController', function($scope) {
@@ -176,7 +177,7 @@ app.controller('selectboxCtrl', function ($scope) {
         else
             $scope.msg = 'Please Select Dropdown Value';
     };
-    $scope.bathrooms = [{value: '0', text: 'Bathrooms'}, {value: '1', text: '1'}, {value: '2', text: '1.5'}, {value: '3', text: '2'}, {	value: '4', text: '2.5'}, {value: '5', text: '3'}, {value: '6', text: '3.5'}, {value: '7', text: '4'}, {value: '8', text: '4.5'}, {value: '9', text: '5'}, {value: '10', text: '5.5'}, {value: '11', text: '6'}];
+    $scope.bathrooms = [{value: '0', text: 'Bathrooms'}, {value: '1', text: '1'}, {value: '1.5', text: '1.5'}, {value: '2', text: '2'}, {	value: '2.5', text: '2.5'}, {value: '3', text: '3'}, {value: '3.5', text: '3.5'}, {value: '4', text: '4'}, {value: '4.5', text: '4.5'}, {value: '5', text: '5'}, {value: '5.5', text: '5.5'}, {value: '6', text: '6'}];
 
     $scope.checkselection = function () {
         if ($scope.userselect2 != "" && $scope.userSelect2 != undefined)
@@ -194,7 +195,7 @@ app.controller('selectboxCtrl', function ($scope) {
             $scope.msg = 'Please Select Dropdown Value';
     };
 
-    $scope.TypeList = [{value: '0',	text: 'Type'}, {value: '1',	text: 'Unknown'}, {value: '2', text: 'SingleFamily'}, {value: '3', text: 'Duplex'}, {value: '4', text: 'Triplex'}, {value: '5', text: 'Quadruplex'}, {value: '6', text: 'Condominium'}, {value: '7', text: 'Cooperative'}, {value: '8', text: 'Mobile'}, {value: '9', text: 'MultiFamily2To4'}, {value: '10', text: 'MultiFamily5Plus'}, {value: '11', text: 'Timeshare'}, {value: '12', text: 'Miscellaneous'},{value: '13', text: 'VacantResidentialLand'}];
+    $scope.TypeList = [{value: '0',	text: 'Type'}, {value: 'Unknown',	text: 'Unknown'}, {value: 'SingleFamily', text: 'SingleFamily'}, {value: 'Duplex', text: 'Duplex'}, {value: 'Triplex', text: 'Triplex'}, {value: 'Quadruplex', text: 'Quadruplex'}, {value: 'Condominium', text: 'Condominium'}, {value: 'Cooperative', text: 'Cooperative'}, {value: 'Mobile', text: 'Mobile'}, {value: 'MultiFamily2To4', text: 'MultiFamily2To4'}, {value: 'MultiFamily5Plus', text: 'MultiFamily5Plus'}, {value: 'Timeshare', text: 'Timeshare'}, {value: 'Miscellaneous', text: 'Miscellaneous'},{value: 'VacantResidentialLand', text: 'VacantResidentialLand'}];
     $scope.checkselection = function () {
         if ($scope.userSelect4 != "" && $scope.userSelect4 != undefined)
             $scope.msg = 'Selected Value: ' + $scope.userSelect4;
@@ -205,7 +206,7 @@ app.controller('selectboxCtrl', function ($scope) {
 
 
 
-    $scope.ParkingList = [{value: '0', text: 'Parking'}, {value: '1', text: 'Garage-Attached'}, {value: '2', text: 'Carport'}, {value: '3', text: 'Off-street'}, {value: '4', text: 'Garage-Detached'}, {value: '5',text: 'None'}];
+    $scope.ParkingList = [{value: '0', text: 'Parking'}, {value: 'Garage-Attached', text: 'Garage-Attached'}, {value: 'Carport', text: 'Carport'}, {value: 'Off-street', text: 'Off-street'}, {value: 'Garage-Detached', text: 'Garage-Detached'}, {value: 'None',text: 'None'}];
 
 
 
