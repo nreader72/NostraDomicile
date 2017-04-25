@@ -52,7 +52,19 @@ $(document).ready(function(){
 						var feature_data = [features_trace];							
 						
 						$('#zip_body').html('The most important attributes leading to home sales in your area are:<br /><div id="features_vis" style="width:600px; height:600px;"></div>'); //json['attributes']);
-						Plotly.plot('features_vis', feature_data);	
+						Plotly.plot('features_vis', feature_data);
+						
+						
+						trace={
+						   x:[1,2,3,12,3,7],
+						   y:[1,2,3,4,5,13],
+						   marker:{
+						   color:['red','blue'],
+						   size:[20,50,80]},
+						   mode:'markers'};
+						$('#visualization_body').html('<div id="vis" style="width:600px; height:250px;"></div>');
+						   Plotly.plot('vis',[trace]);
+						
 
 
 						$('#attributes_feature_button').removeClass('btn-disabled');
@@ -66,6 +78,21 @@ $(document).ready(function(){
 						var data = [trace];
 						$('#visualization_body').html('<div id="vis" style="width:600px; height:250px;"></div>');
 						Plotly.plot('vis', data);
+						
+						//added new charts here
+						
+						//don't know what this is but don't want to cut it [10:11] 
+						
+						trace={
+						   x:[1,2,3],
+						   y:[1,2,3],
+						   marker:{
+						   color:['red','blue'],
+						   size:[20,50,80]},
+						   mode:'markers'};
+						   $('#visualization_body').html('<div id="vis" style="width:600px; height:250px;"></div>');
+						   Plotly.plot('vis',[trace]);
+						
 						$('#visualization_feature_button').removeClass('btn-disabled');
 						$('#visualization_error').remove();
 					} else {
