@@ -76,10 +76,12 @@ def index(request):
 		response_data['message'] = 'Your housing information has been submitted! These are the values you submitted: <br>' + output 
 		response_data['attributes'] = str(attributes)
 
+		#zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,last_sale_price,home_type,
+        #          neighborhood,school_district,parking_type,number_of_floors
 		# Attributes feature
-		if request.POST['zipCode'] != '' and request.POST['price'] != '' and request.POST['sqFootage'] != '' and request.POST['acreage'] != '' and request.POST['yearBuilt'] != '' and request.POST['Neighborhood'] != '' and request.POST['schoolDistrict'] != '' and request.POST['bedroomsNum'] != '0' and request.POST['bathroomsNum'] != '0' and request.POST['storiesNum'] != '0' and request.POST['homeType'] != '0' and request.POST['parkingType'] != '0':
+		if request.POST.get('zipCode') != '' and request.POST.get('price') != '' and request.POST.get('sqFootage') != '' and request.POST.get('acreage') != '' and request.POST.get('yearBuilt') != '' and request.POST.get('Neighborhood') != '' and request.POST.get('schoolDistrict') != '' and request.POST.get('bedroomsNum') != '0' and request.POST.get('bathroomsNum') != '0' and request.POST.get('storiesNum') != '0' and request.POST.get('homeType') != '0' and request.POST.get('parkingType') != '0':
 			response_data['factors'] = 'True'
-			sold = sold_classifier(request.POST['zipCode'],request.POST['bedroomsNum'],request.POST['bathroomsNum'],request.POST['sqFootage'],request.POST['acreage'],request.POST['yearBuilt'],request.POST['price'],request.POST['homeType'],request.POST['Neighborhood'],request.POST['schoolDistrict'],request.POST['parkingType'],request.POST['storiesNum'])
+			sold = sold_classifier(request.POST.get('zipCode'),request.POST.get('bedroomsNum'),request.POST.get('bathroomsNum'),request.POST.get('sqFootage'),request.POST.get('acreage'),request.POST.get('yearBuilt'),request.POST.get('price'),request.POST.get('homeType'),request.POST.get('Neighborhood'),request.POST.get('schoolDistrict'),request.POST.get('parkingType'),request.POST.get('storiesNum'))
 			response_data['sold'] = sold
 		
 		#Visualization feature
