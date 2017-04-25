@@ -29,6 +29,10 @@ def attribute_classifier(zip_code):
     #print(df_pd)
     frames = [df_pd,df_pd]
     df_pd = pd.concat(frames)
+    while(len(df_pd)<1000):
+        frames = [df_pd,df_pd]
+        df_pd = pd.concat(frames)
+
     #list(df_pd)
 
 
