@@ -62,7 +62,7 @@ $(document).ready(function(){
 						   color:['red','blue'],
 						   size:[20,50,80]},
 						   mode:'markers'};
-						$('#visualization_body').html('<div id="vis" style="width:600px; height:250px;"></div>');
+						$('#visualization_body').html('<div id="vis" style="width:600px; height:250px;"></div><div id="vis2" style="width:600px; height:250px;"></div><div id="vis3" style="width:600px; height:250px;"></div>');
 						   Plotly.plot('vis',[trace1]);
 						
 
@@ -76,7 +76,6 @@ $(document).ready(function(){
 							mode:'lines'
 						};
 						var data = [trace2];
-						$('#visualization_body').html('<div id="vis2" style="width:600px; height:250px;"></div>');
 						Plotly.plot('vis2', data);
 						
 						//added new charts here
@@ -90,7 +89,6 @@ $(document).ready(function(){
 						   color:['red','blue'],
 						   size:[20,50,80]},
 						   mode:'markers'};
-						   $('#visualization_body').html('<div id="vis3" style="width:600px; height:250px;"></div>');
 						   Plotly.plot('vis3',[trace3]);
 						
 						$('#visualization_feature_button').removeClass('btn-disabled');

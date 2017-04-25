@@ -36,20 +36,28 @@ def soldOrNot_addr(dataframe):
     df = dataframe.filter(items=['street_address','sold_binary'])
     return df
 
-def main():
-    df = dfMaker('ctsimaan','SeniorProject490','nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com',
-           'PyZillow_Data','27705')
+def allData():
+	df = dfMaker('ctsimaan','SeniorProject490','nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com','PyZillow_Data','27705')
+	return_data = {}
+	return_data['housePriceMean'] = housePriceMean(df)
+	return_data['sqFootMean'] = sqFootMean(df)
+	return_data['homes_bedrooms_df'] = homes_bedrooms_df(df)
+	return_data['soldOrNot_addr'] = soldOrNot_addr(df)
+	return return_data
+
+
+
     #print(df)
     #print(housePriceMean(df))
     #print(homes_bedrooms_df(df))
-    print(soldOrNot_addr(df))
+    #print(soldOrNot_addr(df))
     
-    
+   
 
 
 # In[7]:
 
-main()
+
 
 
 # In[ ]:

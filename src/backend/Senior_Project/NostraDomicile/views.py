@@ -10,6 +10,7 @@ from django.shortcuts import render
 from NostraDomicile.models import HomeData
 from sold_classifier import sold_classifier
 from attribute_classifier import attribute_classifier
+from Chart_Work import allData
 
 def test(request):
 	db = mysql.connector.connect(user='ctsimaan', password='SeniorProject490', host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com', database='PyZillow_Data')
@@ -42,7 +43,7 @@ def test(request):
 	return HttpResponse(text)
 
 def index(request):
-	version = '0.979'
+	version = '0.980'
 	if request.method == 'POST':
 		attributes = attribute_classifier(request.POST['zipCode'])
 		output = ''
@@ -86,6 +87,13 @@ def index(request):
 			sold = sold_classifier(request.POST['zipCode'],request.POST.get('bedroomsNum'),request.POST.get('bathroomsNum'),request.POST.get('sqFootage'),request.POST['acreage'] ,request.POST.get('yearBuilt'),request.POST['price'],request.POST.get('homeType'),request.POST.get('Neighborhood'),request.POST.get('schoolDistrict'),request.POST.get('parkingType'),request.POST.get('storiesNum'))
 			
 			response_data['sold'] = sold
+
+		#results = {}
+		#results = allData()
+		#response_data['housePriceMean'] = results['housePriceMean']
+		#response_data['sqFootMean'] = results['sqFootMean']
+		#response_data['homes_bedrooms_df'] = results['homes_bedrooms_df']
+		#response_data['soldOrNot_addr'] = results['soldOrNot_addr']
 		
 		#Visualization feature
 		
