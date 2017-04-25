@@ -49,7 +49,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
          'lot_size_sq_footage':lot_size_sq_footage,'year_built':year_built, 'last_sale_price':last_sale_price,'home_type':home_type,'neighborhood':
          neighborhood, 'school_district':school_district, 'parking_type':parking_type,'number_of_floors':number_of_floors}
     rowCount = len(df_dum.index)
-    d = pd.DataFrame(data = d, index=[rowCount+1])
+    d = pd.DataFrame(data = d, index=[rowCount])
     cols_to_transform = [ 'home_type','neighborhood','school_district','parking_type']
     d = pd.get_dummies(data=d,columns = cols_to_transform)
     addData = [test,d]
