@@ -43,7 +43,7 @@ def test(request):
 	return HttpResponse(text)
 
 def index(request):
-	version = '0.980'
+	version = '0.982'
 	if request.method == 'POST':
 		attributes = attribute_classifier(request.POST['zipCode'])
 		output = ''
@@ -84,9 +84,9 @@ def index(request):
 		
 			response_data['factors'] = 'True'
 			
-			sold = sold_classifier(request.POST['zipCode'],request.POST.get('bedroomsNum'),request.POST.get('bathroomsNum'),request.POST.get('sqFootage'),request.POST['acreage'] ,request.POST.get('yearBuilt'),request.POST['price'],request.POST.get('homeType'),request.POST.get('Neighborhood'),request.POST.get('schoolDistrict'),request.POST.get('parkingType'),request.POST.get('storiesNum'))
+			#sold = sold_classifier(request.POST['zipCode'],request.POST.get('bedroomsNum'),request.POST.get('bathroomsNum'),request.POST.get('sqFootage'),request.POST['acreage'] ,request.POST.get('yearBuilt'),request.POST['price'],request.POST.get('homeType'),request.POST.get('Neighborhood'),request.POST.get('schoolDistrict'),request.POST.get('parkingType'),request.POST.get('storiesNum'))
 			
-			response_data['sold'] = sold
+			#response_data['sold'] = sold
 
 		#results = {}
 		#results = allData()
