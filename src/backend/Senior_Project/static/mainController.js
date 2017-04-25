@@ -55,7 +55,7 @@ $(document).ready(function(){
 						Plotly.plot('features_vis', feature_data);
 						
 						
-						trace={
+						trace1={
 						   x:[1,2,3,12,3,7],
 						   y:[1,2,3,4,5,13],
 						   marker:{
@@ -63,19 +63,19 @@ $(document).ready(function(){
 						   size:[20,50,80]},
 						   mode:'markers'};
 						$('#visualization_body').html('<div id="vis" style="width:600px; height:250px;"></div>');
-						   Plotly.plot('vis',[trace]);
+						   Plotly.plot('vis',[trace1]);
 						
 
 
 						$('#attributes_feature_button').removeClass('btn-disabled');
 						$('#zip_error').remove();
-						var trace = {
+						var trace2 = {
 							x:[5,8,5,1], 
 							y:[1,2,4,8], 
 							z:[11,8,15,3], 
 							mode:'lines'
 						};
-						var data = [trace];
+						var data = [trace2];
 						$('#visualization_body').html('<div id="vis2" style="width:600px; height:250px;"></div>');
 						Plotly.plot('vis2', data);
 						
@@ -83,7 +83,7 @@ $(document).ready(function(){
 						
 						//don't know what this is but don't want to cut it [10:11] 
 						
-						trace={
+						trace3={
 						   x:[1,2,3],
 						   y:[1,2,3],
 						   marker:{
@@ -91,7 +91,7 @@ $(document).ready(function(){
 						   size:[20,50,80]},
 						   mode:'markers'};
 						   $('#visualization_body').html('<div id="vis3" style="width:600px; height:250px;"></div>');
-						   Plotly.plot('vis3',[trace]);
+						   Plotly.plot('vis3',[trace3]);
 						
 						$('#visualization_feature_button').removeClass('btn-disabled');
 						$('#visualization_error').remove();
