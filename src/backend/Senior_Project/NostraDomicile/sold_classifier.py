@@ -12,6 +12,8 @@ from sklearn import model_selection
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_recall_fscore_support
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 
 
 #zip code for this is 27705
@@ -62,9 +64,11 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     
     seed = 7
     max_features = 3
-    rf = RandomForestClassifier(n_estimators=100, max_features="auto",oob_score = True, 
-                                n_jobs = -1,random_state =50)
-    #rf = RandomForestClassifier(n_estimators=100, max_features=max_features)
+    #rf = RandomForestClassifier(n_estimators=100, max_features="auto",oob_score = True, 
+                                #n_jobs = -1,random_state =50)
+    rf = Pipeline([("scale", StandardScaler()),
+               ("rf", RandomForestClassifier(n_estimators=100, max_features="auto",oob_score = True, 
+                                n_jobs = -1,random_state =50))])
     y, _ = pd.factorize(train['sold_binary'])
     #y = train['sold_binary']
     rf.fit(train[features], y)
