@@ -14,6 +14,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import Imputer
 
 
 #zip code for this is 27705
@@ -71,7 +72,9 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
                                 n_jobs = -1,random_state =50))])
     y, _ = pd.factorize(train['sold_binary'])
     #y = train['sold_binary']
-    rf.fit(train[features], y)
+    train = Imputer().fit_transform(train[features])
+    rf.fit(train, y)
+    #rf.fit(train[features], y)
     #rf.fit(df_dum,y)
     preds = rf.predict(test[features])
     #preds = rf.predict(df_dum)
