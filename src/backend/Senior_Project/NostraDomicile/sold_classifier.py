@@ -28,6 +28,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
 ###################
 
     df_pd = pd.read_sql('SELECT*FROM PyZillow_Data.home_data Where zip = ' + str(zip_code), con=cnx)
+    pd.set_option('precision',2)
     frames = [df_pd,df_pd]
     df_pd = pd.concat(frames)
     while(len(df_pd)<2000):
