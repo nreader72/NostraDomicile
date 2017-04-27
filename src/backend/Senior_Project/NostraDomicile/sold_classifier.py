@@ -12,6 +12,7 @@ from sklearn import model_selection
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_recall_fscore_support
+import json
 #from sklearn.pipeline import Pipeline
 #from sklearn.preprocessing import StandardScaler
 #from sklearn.preprocessing import Imputer
@@ -88,5 +89,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #print "Features sorted by their score:"
     #print sorted(zip(map(lambda x: round(x, 4), rf.feature_importances_), features), 
     #reverse=True)
-    return preds[-1]
+    result = json.dumps(preds[-1])
+    result = json.loads(preds[-1])
+    return result
 
