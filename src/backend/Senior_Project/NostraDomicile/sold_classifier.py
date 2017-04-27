@@ -18,9 +18,9 @@ from sklearn.metrics import precision_recall_fscore_support
 
 
 #zip code for this is 27705
-def sold_classifier(zip_code):
-#def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,last_sale_price,home_type,
-                   #neighborhood,school_district,parking_type,number_of_floors):
+#def sold_classifier(zip_code):
+def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,last_sale_price,home_type,
+                   neighborhood,school_district,parking_type,number_of_floors):
     cnx = mysql.connector.connect(user='ctsimaan',password='SeniorProject490',
                               host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com',
                               database='PyZillow_Data')
@@ -28,7 +28,9 @@ def sold_classifier(zip_code):
 
 ###################
 
-    df_pd = pd.read_sql('SELECT*FROM PyZillow_Data.home_data Where zip = ' + zip_code, con=cnx)
+    #df_pd = pd.read_sql('SELECT*FROM PyZillow_Data.home_data Where zip = ' + zip_code, con=cnx)
+    query = 'SELECT*FROM PyZillow_Data.home_data Where zip =' + zip_code
+    df_pd = pd.read_sql(query, con = cnx)
     #pd.set_option('precision',2)
     frames = [df_pd,df_pd]
     df_pd = pd.concat(frames)
@@ -67,8 +69,9 @@ def sold_classifier(zip_code):
     
     seed = 7
     max_features = 3
-    rf = RandomForestClassifier(n_estimators=100, max_features="auto",oob_score = True, 
-                                n_jobs = -1,random_state =50)
+    #rf = RandomForestClassifier(n_estimators=100, max_features="auto",oob_score = True, 
+                                #n_jobs = -1,random_state =50)
+    rf = RandomForestClassifier(n_estimators=100, max_features=max_features)
     
     y, _ = pd.factorize(train['sold_binary'])
     #y = train['sold_binary']
