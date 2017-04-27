@@ -67,8 +67,8 @@ def sold_classifier(zip_code):
     
     seed = 7
     max_features = 3
-    #rf = RandomForestClassifier(n_estimators=100, max_features="auto",oob_score = True, 
-                                #n_jobs = -1,random_state =50)
+    rf = RandomForestClassifier(n_estimators=100, max_features="auto",oob_score = True, 
+                                n_jobs = -1,random_state =50)
     
     y, _ = pd.factorize(train['sold_binary'])
     #y = train['sold_binary']
