@@ -57,6 +57,19 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #d = {'sold_binary':0, 'bedrooms':bedrooms,'bathrooms':bathrooms,'finished_sq_footage':finished_sq_footage,
          #'lot_size_sq_footage':lot_size_sq_footage,'year_built':year_built, 'last_sale_price':last_sale_price,'home_type':home_type,'neighborhood':
          #neighborhood, 'school_district':school_district, 'parking_type':parking_type,'number_of_floors':number_of_floors}
+    #d['sold_binary']=0
+    #d['bedrooms']=bedrooms
+    #d['bathrooms']=bathrooms
+    #d['finished_sq_footage'] = finished_sq_footage
+    #d['lot_size_sq_footage'] = lot_size_sq_footage
+    #d['year_built'] = year_built
+    #d['last_sale_price'] = last_sale_price
+    #d['home_type'] = home_type
+    #d['neighborhood'] = neighborhood
+    #d['school_district'] = school_district
+    #d['parking_type'] = parking_type
+    #d['number_of_floors'] = number_of_floors
+    
     rowCount = len(df_dum.index)
     #d = pd.DataFrame(data = d, index=[rowCount])
     #cols_to_transform = [ 'home_type','neighborhood','school_district','parking_type']
