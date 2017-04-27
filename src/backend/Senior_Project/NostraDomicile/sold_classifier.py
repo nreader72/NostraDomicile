@@ -50,10 +50,10 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     
     array = df_dum.values
     train, test = train_test_split(df_dum, test_size = 0.3)
-    d={}
-    d = {'sold_binary':0, 'bedrooms':bedrooms,'bathrooms':bathrooms,'finished_sq_footage':finished_sq_footage,
-         'lot_size_sq_footage':lot_size_sq_footage,'year_built':year_built, 'last_sale_price':last_sale_price,'home_type':home_type,'neighborhood':
-         neighborhood, 'school_district':school_district, 'parking_type':parking_type,'number_of_floors':number_of_floors}
+    #d={}
+    #d = {'sold_binary':0, 'bedrooms':bedrooms,'bathrooms':bathrooms,'finished_sq_footage':finished_sq_footage,
+         #'lot_size_sq_footage':lot_size_sq_footage,'year_built':year_built, 'last_sale_price':last_sale_price,'home_type':home_type,'neighborhood':
+         #neighborhood, 'school_district':school_district, 'parking_type':parking_type,'number_of_floors':number_of_floors}
     rowCount = len(df_dum.index)
     #d = pd.DataFrame(data = d, index=[rowCount])
     #cols_to_transform = [ 'home_type','neighborhood','school_district','parking_type']
