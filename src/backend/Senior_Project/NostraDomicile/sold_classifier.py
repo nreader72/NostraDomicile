@@ -104,4 +104,6 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #reverse=True)
     #result = json.dumps(preds[-1])
     #result = json.loads(preds[-1])
-    return preds[-1]
+     prediction = preds[-1].apply(str)
+    
+    return prediction
