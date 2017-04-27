@@ -12,15 +12,15 @@ from sklearn import model_selection
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_recall_fscore_support
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import Imputer
+#from sklearn.pipeline import Pipeline
+#from sklearn.preprocessing import StandardScaler
+#from sklearn.preprocessing import Imputer
 
 
 #zip code for this is 27705
-#def sold_classifier(zip_code):
-def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,last_sale_price,home_type,
-                   neighborhood,school_district,parking_type,number_of_floors):
+def sold_classifier(zip_code):
+#def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,last_sale_price,home_type,
+                   #neighborhood,school_district,parking_type,number_of_floors):
     cnx = mysql.connector.connect(user='ctsimaan',password='SeniorProject490',
                               host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com',
                               database='PyZillow_Data')
@@ -28,8 +28,8 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
 
 ###################
 
-    df_pd = pd.read_sql('SELECT*FROM PyZillow_Data.home_data Where zip = ' + str(zip_code), con=cnx)
-    pd.set_option('precision',2)
+    df_pd = pd.read_sql('SELECT*FROM PyZillow_Data.home_data Where zip = ' + zip_code, con=cnx)
+    #pd.set_option('precision',2)
     frames = [df_pd,df_pd]
     df_pd = pd.concat(frames)
     while(len(df_pd)<2000):
