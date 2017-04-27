@@ -102,7 +102,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #print "Features sorted by their score:"
     #print sorted(zip(map(lambda x: round(x, 4), rf.feature_importances_), features), 
     #reverse=True)
-    result = json.dumps(preds[-1])
+    #result = json.dumps(preds[-1])
     result = json.loads(preds[-1])
     return result
 
