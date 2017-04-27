@@ -19,7 +19,7 @@ from sklearn.preprocessing import Imputer
 
 #zip code for this is 27705
 #def sold_classifier(zip_code):
-  def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,last_sale_price,home_type,
+def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,last_sale_price,home_type,
                    neighborhood,school_district,parking_type,number_of_floors):
     cnx = mysql.connector.connect(user='ctsimaan',password='SeniorProject490',
                               host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com',
