@@ -72,7 +72,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     
     dic_str=""
     for key,val in d.iteritems():
-      dic_str = st + key + str(val)
+      dic_str = dic_str + key + str(val)
 
     
     #rowCount = len(df_dum.index)
