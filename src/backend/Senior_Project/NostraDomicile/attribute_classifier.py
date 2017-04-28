@@ -65,8 +65,8 @@ def attribute_classifier(zip_code):
     #y = train['sold_binary']
     rf.fit(train[features], y)
     #rf.fit(df_dum,y)
-    #preds = rf.predict(test[features])
-    preds = np.nan_to_num(rf.predict(test[features]))
+    preds = rf.predict(test[features])
+    #preds = np.nan_to_num(rf.predict(test[features]))
     #preds = rf.predict(df_dum)
     kfold = model_selection.KFold(n_splits=10, random_state=seed)
     results = model_selection.cross_val_score(rf, test[features], test['sold_binary'], cv=kfold)
