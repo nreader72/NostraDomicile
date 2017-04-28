@@ -54,30 +54,35 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     array = df_dum.values
     train, test = train_test_split(df_dum, test_size = 0.3)
     d={}
-    d = {'sold_binary':0, 'bedrooms':bedrooms,'bathrooms':bathrooms,'finished_sq_footage':finished_sq_footage,
-         'lot_size_sq_footage':lot_size_sq_footage,'year_built':year_built, 'last_sale_price':last_sale_price,'home_type':home_type,'neighborhood':
-         neighborhood, 'school_district':school_district, 'parking_type':parking_type,'number_of_floors':number_of_floors}
-    #d['sold_binary']=0
-    #d['bedrooms']=bedrooms
-    #d['bathrooms']=bathrooms
-    #d['finished_sq_footage'] = finished_sq_footage
-    #d['lot_size_sq_footage'] = lot_size_sq_footage
-    #d['year_built'] = year_built
-    #d['last_sale_price'] = last_sale_price
-    #d['home_type'] = home_type
-    #d['neighborhood'] = neighborhood
-    #d['school_district'] = school_district
-    #d['parking_type'] = parking_type
-    #d['number_of_floors'] = number_of_floors
+    #d = {'sold_binary':0, 'bedrooms':bedrooms,'bathrooms':bathrooms,'finished_sq_footage':finished_sq_footage,
+         #'lot_size_sq_footage':lot_size_sq_footage,'year_built':year_built, 'last_sale_price':last_sale_price,'home_type':home_type,'neighborhood':
+         #neighborhood, 'school_district':school_district, 'parking_type':parking_type,'number_of_floors':number_of_floors}
+    d['sold_binary']=0
+    d['bedrooms']=bedrooms
+    d['bathrooms']=bathrooms
+    d['finished_sq_footage'] = finished_sq_footage
+    d['lot_size_sq_footage'] = lot_size_sq_footage
+    d['year_built'] = year_built
+    d['last_sale_price'] = last_sale_price
+    d['home_type'] = home_type
+    d['neighborhood'] = neighborhood
+    d['school_district'] = school_district
+    d['parking_type'] = parking_type
+    d['number_of_floors'] = number_of_floors
     
-    rowCount = len(df_dum.index)
-    d = pd.DataFrame(data = d, index=[rowCount])
-    cols_to_transform = [ 'home_type','neighborhood','school_district','parking_type']
-    d = pd.get_dummies(data=d,columns = cols_to_transform)
-    addData = [test,d]
-    test = pd.concat(addData)
-    test = test.fillna(test.mean())
-    colCount = len(df_dum.columns)
+    dic_str=""
+    for key,val in d.iteritems():
+      dic_str = st + key + str(val)
+
+    
+    #rowCount = len(df_dum.index)
+    #d = pd.DataFrame(data = d, index=[rowCount])
+    #cols_to_transform = [ 'home_type','neighborhood','school_district','parking_type']
+    #d = pd.get_dummies(data=d,columns = cols_to_transform)
+    #addData = [test,d]
+    #test = pd.concat(addData)
+    #test = test.fillna(test.mean())
+    #colCount = len(df_dum.columns)
     features = df_dum.columns[1:colCount]
 
     
@@ -105,5 +110,5 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #result = json.dumps(preds[-1])
     #result = json.loads(preds[-1])
     preds = np.array(map(str, preds))
-    
-    return preds[-1]
+    #preds[-1]
+    return dict_str
