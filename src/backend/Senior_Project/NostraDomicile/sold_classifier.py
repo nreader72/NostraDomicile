@@ -74,13 +74,13 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
       #dic_str = dic_str + key + str(val)
 
     
-    rowCount = len(df_dum.index)
-    d = pd.DataFrame(data = d, index=[rowCount])
-    cols_to_transform = [ 'home_type','neighborhood','school_district','parking_type']
-    d = pd.get_dummies(data=d,columns = cols_to_transform)
-    addData = [test,d]
-    test = pd.concat(addData)
-    test = test.fillna(test.mean())
+    #rowCount = len(df_dum.index)
+    #d = pd.DataFrame(data = d, index=[rowCount])
+    #cols_to_transform = [ 'home_type','neighborhood','school_district','parking_type']
+    #d = pd.get_dummies(data=d,columns = cols_to_transform)
+    #addData = [test,d]
+    #test = pd.concat(addData)
+    #test = test.fillna(test.mean())
     colCount = len(df_dum.columns)
     features = df_dum.columns[1:colCount]
     test_feat = np.nan_to_num(test[features])
@@ -103,7 +103,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     preds = np.nan_to_num(rf.predict(test_feat))
     #preds = rf.predict(df_dum)
     kfold = model_selection.KFold(n_splits=10, random_state=seed)
-    results = model_selection.cross_val_score(rf, test[features], test['sold_binary'], cv=kfold)
+    results = model_selection.cross_val_score(rf, test_feat, test['sold_binary'], cv=kfold)
     #print(precision_recall_fscore_support(test['sold_binary'], preds, average='micro'))
     #print(results.mean())
     #print "Features sorted by their score:"
