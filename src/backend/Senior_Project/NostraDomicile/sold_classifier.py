@@ -83,6 +83,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     test = test.fillna(test.mean())
     colCount = len(df_dum.columns)
     features = df_dum.columns[1:colCount]
+    test_feat = np.nan_to_num(test[features])
 
     
     seed = 7
@@ -97,7 +98,9 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #rf.fit(train, y)
     rf.fit(train[features], y)
     #rf.fit(df_dum,y)
-    preds = rf.predict(test[features])
+    
+
+    preds = np.nan_to_num(rf.predict(test_feat))
     #preds = rf.predict(df_dum)
     kfold = model_selection.KFold(n_splits=10, random_state=seed)
     results = model_selection.cross_val_score(rf, test[features], test['sold_binary'], cv=kfold)
