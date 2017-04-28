@@ -82,7 +82,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #addData = [test,d]
     #test = pd.concat(addData)
     #test = test.fillna(test.mean())
-    #colCount = len(df_dum.columns)
+    colCount = len(df_dum.columns)
     features = df_dum.columns[1:colCount]
 
     
