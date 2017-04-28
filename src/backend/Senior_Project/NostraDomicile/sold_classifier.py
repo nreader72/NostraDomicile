@@ -69,18 +69,18 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     d['parking_type'] = parking_type
     d['number_of_floors'] = number_of_floors
     
-    dic_str = ""
-    for key,val in d.iteritems():
-      dic_str = dic_str + key + str(val)
+    #dic_str = ""
+    #for key,val in d.iteritems():
+      #dic_str = dic_str + key + str(val)
 
     
-    #rowCount = len(df_dum.index)
-    #d = pd.DataFrame(data = d, index=[rowCount])
-    #cols_to_transform = [ 'home_type','neighborhood','school_district','parking_type']
-    #d = pd.get_dummies(data=d,columns = cols_to_transform)
-    #addData = [test,d]
-    #test = pd.concat(addData)
-    #test = test.fillna(test.mean())
+    rowCount = len(df_dum.index)
+    d = pd.DataFrame(data = d, index=[rowCount])
+    cols_to_transform = [ 'home_type','neighborhood','school_district','parking_type']
+    d = pd.get_dummies(data=d,columns = cols_to_transform)
+    addData = [test,d]
+    test = pd.concat(addData)
+    test = test.fillna(test.mean())
     colCount = len(df_dum.columns)
     features = df_dum.columns[1:colCount]
 
@@ -110,4 +110,4 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #result = json.loads(preds[-1])
     preds = np.array(map(str, preds))
     #preds[-1]
-    return dic_str[-1]
+    return preds[-1]
