@@ -45,7 +45,7 @@ def test(request):
 	return HttpResponse(text)
 
 def index(request):
-	version = '0.983'
+	version = '0.985'
 	if request.method == 'POST':
 		attributes = attribute_classifier(request.POST['zipCode'])
 		output = ''

@@ -91,6 +91,7 @@ $(document).ready(function(){
 						   mode:'markers'};
 						   Plotly.plot('vis3',[trace3]);
 						
+						//alert(json['housePriceMean']);
 						$('#visualization_feature_button').removeClass('btn-disabled');
 						$('#visualization_error').remove();
 					} else {
