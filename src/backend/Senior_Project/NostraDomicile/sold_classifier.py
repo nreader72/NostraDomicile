@@ -52,22 +52,22 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     
     array = df_dum.values
     train, test = train_test_split(df_dum, test_size = 0.3)
-    d={}
+    #d={}
     #d = {'sold_binary':0, 'bedrooms':bedrooms,'bathrooms':bathrooms,'finished_sq_footage':finished_sq_footage,
          #'lot_size_sq_footage':lot_size_sq_footage,'year_built':year_built, 'last_sale_price':last_sale_price,'home_type':home_type,'neighborhood':
          #neighborhood, 'school_district':school_district, 'parking_type':parking_type,'number_of_floors':number_of_floors}
-    d['sold_binary']=0
-    d['bedrooms']=bedrooms
-    d['bathrooms']=bathrooms
-    d['finished_sq_footage'] = finished_sq_footage
-    d['lot_size_sq_footage'] = lot_size_sq_footage
-    d['year_built'] = year_built
-    d['last_sale_price'] = last_sale_price
-    d['home_type'] = home_type
-    d['neighborhood'] = neighborhood
-    d['school_district'] = school_district
-    d['parking_type'] = parking_type
-    d['number_of_floors'] = number_of_floors
+    #d['sold_binary']=0
+    #d['bedrooms']=bedrooms
+    #d['bathrooms']=bathrooms
+    #d['finished_sq_footage'] = finished_sq_footage
+    #d['lot_size_sq_footage'] = lot_size_sq_footage
+    #d['year_built'] = year_built
+    #d['last_sale_price'] = last_sale_price
+    #d['home_type'] = home_type
+    #d['neighborhood'] = neighborhood
+    #d['school_district'] = school_district
+    #d['parking_type'] = parking_type
+    #d['number_of_floors'] = number_of_floors
     
     #dic_str = ""
     #for key,val in d.iteritems():
@@ -83,7 +83,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #test = test.fillna(test.mean())
     colCount = len(df_dum.columns)
     features = df_dum.columns[1:colCount]
-    test_feat = np.nan_to_num(test[features])
+    #est_feat = np.nan_to_num(test[features])
 
     
     seed = 7
@@ -99,11 +99,11 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     rf.fit(train[features], y)
     #rf.fit(df_dum,y)
     
-
-    preds = np.nan_to_num(rf.predict(test_feat))
+    preds = rf.predict(test[features])
+    #preds = np.nan_to_num(rf.predict(test_feat))
     #preds = rf.predict(df_dum)
     kfold = model_selection.KFold(n_splits=10, random_state=seed)
-    results = model_selection.cross_val_score(rf, test_feat, test['sold_binary'], cv=kfold)
+    results = model_selection.cross_val_score(rf, test[features], test['sold_binary'], cv=kfold)
     #print(precision_recall_fscore_support(test['sold_binary'], preds, average='micro'))
     #print(results.mean())
     #print "Features sorted by their score:"
