@@ -51,6 +51,7 @@ def allData():
     return_data['sqFootMean'] = sqFootMean(df)
     return_data['homes_bedrooms_df'] = homes_bedrooms_df(df)
     return_data['soldOrNot_addr'] = soldOrNot_addr(df)
+    return_data = json.dumps(return_data)
     return return_data
 
 
@@ -58,7 +59,7 @@ def allData():
     #print(df)
     #print(housePriceMean(df))
     #print(homes_bedrooms_df(df))
-print(allData())
+#print(allData())
     
 
 
