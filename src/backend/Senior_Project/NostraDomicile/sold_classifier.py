@@ -1,4 +1,3 @@
-
 # coding: utf-8
 
 # In[ ]:
@@ -70,7 +69,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     d['parking_type'] = parking_type
     d['number_of_floors'] = number_of_floors
     
-    dic_str=""
+    dic_str = ""
     for key,val in d.iteritems():
       dic_str = dic_str + key + str(val)
 
@@ -111,4 +110,4 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #result = json.loads(preds[-1])
     preds = np.array(map(str, preds))
     #preds[-1]
-    return dict_str
+    return dic_str[-1]

@@ -97,7 +97,7 @@ $(document).ready(function(){
 						
 					}
 					if (json['factors'] == 'True') {
-						//alert('sold:' + json['sold']);
+						alert('sold:' + json['sold']);
 						$('#factors_body').html('<p style="color:black">Your home is predicted to <strong><u>Sell</u></strong> based on the submitted data and the zip code you provided.</p>');
 						$('#sell_feature_button').removeClass('btn-disabled');
 						$('#factors_error').remove();

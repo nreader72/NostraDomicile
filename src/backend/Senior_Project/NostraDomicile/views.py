@@ -13,16 +13,18 @@ from attribute_classifier import attribute_classifier
 from Chart_Work import allData
 
 def test(request):
-	db = mysql.connector.connect(user='ctsimaan', password='SeniorProject490', host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com', database='PyZillow_Data')
-	cursor = db.cursor()
-	query = 'SELECT * \nFROM `PyZillow_Data`.`home_data`\nWHERE `home_data`.`zip` = %s'
-	cursor.execute(query,('27358',))
-	result = cursor.fetchall()
-	list = str(result)
-	fp = open('NostraDomicile/test.txt','w+')
-	fp.write(list)
-	fp.close()
-	text = "Test:" + str(sold_classifier('27358'))
+	#db = mysql.connector.connect(user='ctsimaan', password='SeniorProject490', host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com', database='PyZillow_Data')
+	#cursor = db.cursor()
+	#query = 'SELECT * \nFROM `PyZillow_Data`.`home_data`\nWHERE `home_data`.`zip` = %s'
+	#cursor.execute(query,('27358',))
+	#result = cursor.fetchall()
+	#list = str(result)
+	#fp = open('NostraDomicile/test.txt','w+')
+	#fp.write(list)
+	#fp.close()
+	# zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_footage,year_built,last_sale_price,home_type,
+    # neighborhood,school_district,parking_type,number_of_floors
+	text = "Test:" + str(sold_classifier('27358','1','1','1','1,','1999','100000000','single-family','none','none','none','1'))
 	
 	
 	#cursor.execute('SELECT * FROM `PyZillow_Data`.`home_data` LIMIT 10')
@@ -38,12 +40,12 @@ def test(request):
 	#	text += '</tr>'
 	#text += '</table></body></html>'
 	
-	db.close()
+	#db.close()
 	
 	return HttpResponse(text)
 
 def index(request):
-	version = '0.982'
+	version = '0.983'
 	if request.method == 'POST':
 		attributes = attribute_classifier(request.POST['zipCode'])
 		output = ''
@@ -54,20 +56,6 @@ def index(request):
 		
 		output = output[:-2]
 
-	#	db = mysql.connector.connect(user='ctsimaan', password='SeniorProject490', host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com', database='PyZillow_Data')
-	#	cursor = db.cursor()
-
-		
-
-	#	query = 'SELECT * \nFROM `PyZillow_Data`.`home_data`\nWHERE `home_data`.`zip` = %s'
-	#	cursor.execute(query,(zCode,))
-		
-	#	result = cursor.fetchall()
-	#	fp = open('test.txt','w+')
-	#	testFile = csv.writer(fp)
-	#	testFile.writerows(result)
-		#reader = csv.reader(fp)
-	#	fp.close()
 		
 		# Main factors feature
 		response_data = {}
@@ -84,9 +72,11 @@ def index(request):
 		
 			response_data['factors'] = 'True'
 			
-			#sold = sold_classifier(request.POST['zipCode'],request.POST.get('bedroomsNum'),request.POST.get('bathroomsNum'),request.POST.get('sqFootage'),request.POST['acreage'] ,request.POST.get('yearBuilt'),request.POST['price'],request.POST.get('homeType'),request.POST.get('Neighborhood'),request.POST.get('schoolDistrict'),request.POST.get('parkingType'),request.POST.get('storiesNum'))
+			sold = str(sold_classifier(request.POST['zipCode'],request.POST.get('bedroomsNum'),request.POST.get('bathroomsNum'),request.POST.get('sqFootage'),request.POST['acreage'] ,request.POST.get('yearBuilt'),request.POST['price'],request.POST.get('homeType'),request.POST.get('Neighborhood'),request.POST.get('schoolDistrict'),request.POST.get('parkingType'),request.POST.get('storiesNum')))
 			
-			#response_data['sold'] = sold
+			#sold = str(sold_classifier('27358','1','1','1','1,','1999','100000000','single-family','none','none','none','1'))
+			
+			response_data['sold'] = sold
 
 		#results = {}
 		#results = allData()
