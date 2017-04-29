@@ -108,7 +108,7 @@ def sold_classifier(zip_code,bedrooms,bathrooms,finished_sq_footage,lot_size_sq_
     #preds = np.nan_to_num(rf.predict(test_feat))
     #preds = rf.predict(df_dum)
     kfold = model_selection.KFold(n_splits=10, random_state=seed)
-    results = model_selection.cross_val_score(rf, test[features], test['sold_binary'], cv=kfold)
+    results = model_selection.cross_val_score(rf, test[features], test['sold_binary'], cv=kfold,n_job=1)
     #print(precision_recall_fscore_support(test['sold_binary'], preds, average='micro'))
     #print(results.mean())
     #print "Features sorted by their score:"
