@@ -16,9 +16,8 @@ from sklearn.metrics import precision_recall_fscore_support
 #import matplotlib.pyplot as plt
 
 def attribute_classifier(zip_code):
-    cnx = mysql.connector.connect(user='ctsimaan',password='SeniorProject490',
-        host='nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com',
-        database='PyZillow_Data')
+    cnx = mysql.connector.connect(user='',password='',
+        host='',   database='')
     cursor = cnx.cursor()
 
 
