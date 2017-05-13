@@ -81,8 +81,8 @@ def house_and_price(dataframe):
 # In[22]:
 
 def main():
-    df = dfMaker('ctsimaan','SeniorProject490','nostradomicile-data.c6x7vypetdqh.us-west-2.rds.amazonaws.com',
-           'PyZillow_Data','27705')
+    df = dfMaker('','','',
+           '')
     #print(df)
     #print(housePriceMean(df))
     #print(homes_bedrooms_df(df))
